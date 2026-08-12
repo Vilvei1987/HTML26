@@ -5,14 +5,17 @@ table {
 }
 
 th {
-    color: black;
-    
-}
-
-th, td {
     border: 5px solid black;
     padding: 12px;
-    background-color: pink;
-    font-weight: bold;
+    background-color: gray;
+    font-weight: normal;
+    color: black;
+}
 
+td {
+    border: 5px solid black;
+    padding: 12px;
+    background-color: white;
+    font-weight: bold;
+    color: black;
 }
