@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightslategrey;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    background-color: lightgray;
+    width: 400px;
+    padding: 25px;
+    margin: auto;
+}
+
+input {
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 6px;
+}

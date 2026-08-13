@@ -4,38 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>20 HTML tehtävää</title>
+    <link rel="stylesheet" href="20tehtavaacss.css">
 </head>
-<h1>Osa 7:n harjoitukset</h1>
+
 <body>
-    <form>
+
+<h1>Osa 7:n harjoitukset</h1>
+
+<form>
+
     <label for="nimi">Nimi:</label>
     <input 
         id="nimi" 
         name="nimi"    
         type="text">
-        <br>
+    <br>
 
-    <label for="sähköposti">Sähköposti:</label>
+    <label for="sahkoposti">Sähköposti:</label>
     <input 
-        id="sähköposti" 
-        name="sähköposti" 
+        id="sahkoposti" 
+        name="sahkoposti" 
         type="email">
-        <br>
+    <br>
 
     <label for="salasana">Salasana:</label>
-    <input id="salasana" 
+    <input 
+        id="salasana" 
         name="salasana" 
-        type="password" required>
-        <br>
+        type="password" 
+        required>
+    <br>
 
-   <label for="ika">Ikä:</label>
+    <label for="ika">Ikä:</label>
     <input 
         id="ika" 
         name="ika" 
-        type="number"> 
-        <br>
+        type="number">
+    <br>
 
-        
+    <p>Sukupuoli</p>
+
+    <label>
+        <input 
+            type="radio" 
+            name="sukupuoli" 
+            value="mies">
+        Mies
+    </label>
+
+    <label>
+        <input 
+            type="radio" 
+            name="sukupuoli" 
+            value="nainen">
+        Nainen
+    </label>
+
+    <br>
+
+    <label>
+        <input 
+            type="checkbox"    
+            name="Hyvaksyn ehdot">
+        Hyväksyn ehdot
+    </label>
+
+    <br>
+
+    <label for="lisatiedot">Lisätiedot</label>
+    <textarea 
+        id="lisatiedot" 
+        name="lisatiedot">
+    </textarea>
+
+    <br>
+
+    <label for="oletko">Oletko ihminen?</label>
+    <select 
+        id="oletko" 
+        name="oletko">
+    <option 
+        value="kyllä">Kyllä</option>
+    <option 
+        value="en">En</option>
+    </select>
+
+   <label for="kayttajatunnus">Käyttäjätunnus</label>
+        <input 
+            id="kayttajatunnus"
+            name="kayttajatunnus"
+            type="text"
+            minlength="4"
+            maxlength="12"
+            required>
+            
+<fieldset>
+  <legend>Yhteystiedot</legend>
+
+  <label for="nimi">Nimi</label>
+        <input 
+            id="nimi" 
+            name="nimi" 
+            type="text">
+
+  <label for="email">Sähköposti</label>
+        <input 
+            id="email" 
+            name="email" 
+            type="email">
+</fieldset> 
+
+<form action="/laheta" method="post">
+  <label for="nimi">Nimi</label>
+        <input 
+            id="nimi" 
+            name="nimi" 
+            type="text" 
+            required>
+
+  <label for="emaili">Sähköposti</label>
+        <input 
+        id="emaili" 
+        name="emaili" 
+        type="email" 
+        required>
+
+  <label for="viesti">Viesti</label>
+        <textarea
+            id="viesti" 
+            name="viesti" 
+            required>
+        </textarea>
+
+  <button type="submit">Lähetä</button>
 </form>
+
 </body>
 </html>
