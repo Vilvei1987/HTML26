@@ -64,9 +64,9 @@ article {
 /* ASIDE = sivupalkki / lisämateriaalit */
 aside {
     background-color: #ddd;
-    width: 100%;
-    margin: 20px;
-    padding: 20px;
+    width: 40%;
+    margin: 100px;
+    padding: 100px;
 }
 
 aside a {
