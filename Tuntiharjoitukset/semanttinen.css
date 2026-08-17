@@ -1,0 +1,88 @@
+/* Koko sivun perusasetukset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+
+/* HEADER = sivun yläosa */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* NAV = navigointivalikko */
+nav {
+    background-color: #555;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* MAIN = sivun pääsisältö */
+main {
+    background-color: white;
+    width: 65%;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+/* ARTICLE = itsenäinen sisältö */
+article {
+    background-color: #e8f1f8;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 5px solid #555;
+}
+
+
+/* ASIDE = sivupalkki / lisämateriaalit */
+aside {
+    background-color: #ddd;
+    width: 25%;
+    margin: 20px;
+    padding: 20px;
+}
+
+aside a {
+    color: #333;
+}
+
+
+/* FOOTER = sivun alaosa */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: white;
+}
