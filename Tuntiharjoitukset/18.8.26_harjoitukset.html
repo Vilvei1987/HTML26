@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tervetuloa</title>
+    <link rel="stylesheet" href="CSS/18.8_harjoitukset.css">
+</head>
+<body>
+    <h1>Tervetuloa</h1>
+    <p>Tämä on minun ensimmäinen HTML-sivuni</p>
+
+    <h2>Otsikko 2</h2>
+    <h3>Otsikko 3</h3>
+    <h4>Otsikko 4</h4>
+    <h5>Otsikko 5</h5>
+    <h6>Otsikko 6</h6>
+
+    <a href="https://google.fi" target="_blank">Google</a>
+    
+    <img src="petekissa.jpg" alt="pete kissa" width="250">
+
+    <h2>Haluan oppia HTML:stä</h2>
+    <ol>
+        <li>Toimivan kotisivun</li>
+        <li>Tekemään sivuilla toimivan pelin</li>
+        <li>Tekemään sivuilla toimivan ohjelman</li>
+    </ol>
+
+    <h2>Lempiruuat</h2>
+
+    <ul>
+        <li>Pizza</li>
+        <li>Hampurilainen</li>
+        <li>Maksalaatikko</li>
+        <li>Hernekeitto</li>
+    </ul>
+
+    <table border="1">
+        <tr>
+            <td>Ville</td>
+            <td>39</td>
+        </tr>
+
+        <tr>
+            <td>Keijo</td>
+            <td>55</td>
+        </tr>
+</table> 
+
+<a href="https://www.google.com/search?q=kissa" target="_blank">
+    <img src="petekissa.jpg" alt="petekissa" width="175">
+</a>
+
+    <h3>Kuka olet?</h3>
+<form>
+    <label for="nimi">Nimi:</label>
+    <input type="text" id="nimi" name="nimi">
+    <input type="submit" value="Lähetä">
+</form>
+
+    <h3>Lähetä palaute</h3>
+<form>
+    <label for="palaute">Palaute:</label><br>
+        <textarea 
+            id="palaute" 
+            name="palaute"
+            rows="6" cols="30">
+        </textarea>
+        <input type="submit" value="Lähetä">
+
+</form>
+
+<h3>Sukupuoli</h3>
+
+    <label>
+        <input
+            type="radio"
+            name="sukupuoli"
+            value="nainen">nainen
+    </label>
+<br>
+    <label>
+        <input
+            type="radio"
+            name="sukupuoli"
+            value="mies">mies
+    </label>
+<br>
+     <label>
+        <input
+            type="radio"
+            name="sukupuoli"
+            value="muu">muu
+    </label>
+</form>
+
+<h3>Suosikki harrastuksesi</h3>
+<form>
+    <label>
+        <input
+            type="checkbox"
+            name="harrastus"
+            value="jalkapallo">Jalkapallo
+</label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="harrastus"
+            value="koripallo">Koripallo
+</label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="harrastus"
+            value="tennis">Tennis
+</label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="harrastus"
+            value="biljardi">Biljardi
+</label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="harrastus"
+            value="postimerkit">Postimerkit
+</label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="harrastus"
+            value="ompelu">Ompelu
+</label>
+
+</form>
+<br>
+
+<h3>Suosikki värisi</h3>
+<!-- Tässä on lempiväri osio -->
+<form>
+    <label for="vari">Valitse väri:
+    </label>
+<br>
+    <select id="vari" name="vari">
+        <option value="keltainen">Keltainen</option>
+        <option value="sininen">Sininen</option>
+        <option value="musta">Musta</option>
+        <option value="vihrea">Vihreä</option>    
+    </select>
+</form>
+
+<ul>
+    <li>Autot
+        <ul>
+            <li>Audi</li>
+            <li>BMW</li>
+            <li>Tesla</li>
+        </ul>
+    </li>
+    <li>Puhelimet
+        <ul>
+            <li>Apple</li>
+            <li>Samsung</li>
+            <li>OnePlus</li>
+        </ul>
+    </li>
+</ul>
+
+<!--tästä jatkuu H18-> tehtävät -->
+ <div>
+    <h4>Otsikko ja kuva divissä</h4>
+    <img src="petekissa.jpg" alt="petek kissa" width="200">
+ </div>
+
+ <div>
+    <h4>Otsikko ja kuva divissä</h4>
+    <img src="petekissa.jpg" alt="petek kissa" width="200px">
+ </div>
+    <p>Lorem ipsum dolor sit amet, consectetur<span> adipisicing elit.</span>Ipsa, saepe?</p>
+    <header>
+        <h1>header otsikko</h1>
+    </header>
+    <section>
+        <h2>section otsikko</h2>
+    </section>
+    <footer>
+        <h3>footer otsikko</h3>
+    </footer>
+
+    <video src="htmlharjoitus.mp4" width="450" controls>testivideo</video>
+    <audio src="htmlharjoitus.mp3" controls>testiääni</audio>
+
+    <h2>Lähetä sähköpostia</h2>
+   <form>
+    <label for="sahkoposti">Sähköposti:</label><br>
+    <input type="email" id="sahkoposti" name="sahkoposti" required>
+    <button type="submit">Lähetä</button>
+    </form>   
+</body>
+</html>
