@@ -5,8 +5,32 @@ body {
 
 p {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: darkgreen;
 }
 
 span {
     color: red
+}
+
+section {
+    font-family:'Times New Roman', Times, serif;
+    background-color: darkgreen;
+}
+
+footer {
+    font-family: cursive;
+    background-color: darkgreen;
+}
+
+h2 {
+    font-family: monospace;
+    background-color: lightblue;
+}
+
+ul {
+    background-color: violet;
+}
+
+ol {
+    background-color: greenyellow;
 }
