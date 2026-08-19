@@ -18,7 +18,7 @@
 
     <a href="https://google.fi" target="_blank">Google</a>
     
-    <img src="petekissa.jpg" alt="pete kissa" width="250">
+    <img src="kuvat/petekissa.jpg" alt="pete kissa" width="250">
 
     <h2>Haluan oppia HTML:stä</h2>
     <ol>
@@ -176,12 +176,12 @@
 <!--tästä jatkuu H18-> tehtävät -->
  <div>
     <h4>Otsikko ja kuva divissä</h4>
-    <img src="petekissa.jpg" alt="petek kissa" width="200">
+    <img src="kuvat/petekissa.jpg" alt="pete kissa" width="200">
  </div>
 
  <div>
     <h4>Otsikko ja kuva divissä</h4>
-    <img src="petekissa.jpg" alt="petek kissa" width="200px">
+    <img src="kuvat/petekissa.jpg" alt="pete kissa" width="200px">
  </div>
     <p>Lorem ipsum dolor sit amet, consectetur<span> adipisicing elit.</span>Ipsa, saepe?</p>
     <header>
@@ -211,5 +211,23 @@
         <h5>testiääni2</h5>
         <p>Tämä on harjoitusta varten tehty testiääni</p>
     </section>
+
+    <h4>HARJOITUS 2: video + <span>tekstitys</span></h4>
+    <!--tässä lisätään video ja siihen tekstitys-->
+        <video width="450" controls poster="kuvat/punainenauto.jpg">
+        <source src="htmlharjoitus.mp4"
+                    type="video/mp4">
+        <track
+                src="tekstitys.vtt"
+                kind="captions"
+                srclang="fi"
+                label="Suomi"
+                default>
+        </video>
+        <picture>
+            <source media="(max-width: 1000px)" srcset="kuvat/kissa.jpeg">
+            <source media="(max-width: 500px)" srcset="kuvat/punainenauto.jpg">
+            <img src="kuvat/kissa.jpeg" alt="kissa tai auto">
+        </picture>
 </body>
 </html>

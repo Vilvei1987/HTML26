@@ -14,7 +14,7 @@ span {
 
 section {
     font-family:'Times New Roman', Times, serif;
-    background-color: darkgreen;
+    background-color: blue;
 }
 
 footer {
@@ -33,4 +33,8 @@ ul {
 
 ol {
     background-color: greenyellow;
+}
+
+picture img {
+    max-width: 100%;
 }
