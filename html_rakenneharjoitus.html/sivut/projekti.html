@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>esp32 projekti</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Etusivu</a>
+            <a href="tekniikka.html">Tekniikka</a>
+            <a href="projekti.html">Projekti</a>
+        </nav>
+    </header>
+        
+     <main>
+        <h1>DIY ESP32 makropad</h1>
+        <article>
+              <h2>Projektin esittely</h2>  
+                    <p>ESP32-makropad on pieni ohjelmoitava näppäimistö,
+                        jonka painikkeille voidaan määrittää erilaisia toimintoja.
+                    </p>
+
+                    <p>Makropadia voidaan käyttää esimerkiksi ohjelmien,
+                        pelien ja muiden tietokoneen toimintojen ohjaamiseen.
+                    </p>
+        </article>
+        <figure>
+        <img src="../espkuvat/makropad.webp"
+         alt="Valmis ESP32-makropad"
+         width="300">
+        <figcaption>Valmis ESP32-makropad.
+        </figcaption>
+        </figure>
+
+        <section>
+            <h2>Tarvittavat komponentit</h2>
+            <p>Ainakin:</p>
+            <ul>
+                <li>ESP32-kehityskortti</li>
+                <li>Mekaaniset painikkeet</li>
+                <li>Kytkentäjohdot</li>
+                <li>USB-kaapeli</li>
+                <li>Kotelo</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Projektin rakentaminen</h2>
+            <ol>
+                <li>Suunnittele makropadin painikkeiden toiminnot.</li>
+                <li>Kytke painikkeet ESP32:n GPIO-liitäntöihin.</li>
+                <li>Ohjelmoi ESP32 tunnistamaan painikkeiden painallukset.</li>
+                <li>Testaa painikkeiden toiminta.</li>
+                <li>Asenna komponentit koteloon.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Projektin ääninäyte</h2>
+
+            <audio controls>
+                <source src="../espkuvat/nappaimet.mp3" type="audio/mpeg">
+        Selaimesi ei tue audioelementtiä.
+            </audio>
+        </section>
+
+        <section>
+            <h2>YouTubesta löytyvä projektivideo</h2>
+       <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/P_oSLBZABGA?si=Z8BbcT8Ysz-BQ8rq"
+                title="ESP32-makropadin projektivideo youtubessa"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+</iframe>
+        </section>
+        <section>
+    <h2>Anna palautetta:</h2>
+
+    <form>
+
+        <fieldset>
+            <legend>Yhteystiedot</legend>
+
+            <label for="nimi">Nimi:</label>
+            <input type="text" 
+                    id="nimi" 
+                    name="nimi"
+                   placeholder="Etunimi Sukunimi" required>
+
+            <br>
+
+            <label for="email">Sähköposti:</label>
+            <input type="email" 
+                    id="email" 
+                    name="email"
+                   placeholder="nimi@esimerkki.fi" required>
+
+            <p>Sukupuoli</p>
+
+<label>
+    <input type="radio" name="sukupuoli" value="Mies">
+    Mies
+</label>
+
+<label>
+    <input type="radio" name="sukupuoli" value="Nainen">
+    Nainen
+</label>
+
+<label>
+    <input type="radio" name="sukupuoli" value="enhaluakertoa">
+    En halua kertoa
+</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Palaute</legend>
+
+            <label for="arvio">Miten arvioisit projektia?</label>
+            <select id="arvio" name="arvio">
+                <option value="hyva">Hyvä</option>
+                <option value="huono">Huono</option>
+            </select>
+
+            <label>
+            <input type="checkbox" name="suosittelu">
+                Suosittelisin tätä opasta
+            </label>
+
+            <br>
+            <label for="palaute">Kirjoita palautteesi:</label>
+            <textarea id="palaute" name="palaute"
+                      rows="4" cols="35"
+                      required></textarea>
+        </fieldset>
+
+        <button type="submit">Lähetä</button>
+
+    </form>
+</section>
+    </main>
+
+<footer>
+    <p>&copy; 2026 ESP32-opas Ville Veijonen</p>
+
+    <p>
+        Lisätietoja ESP32:sta:
+        <a href="https://www.espressif.com/en/products/socs/esp32">
+            Espressif Systems – ESP32
+        </a>
+    </p>
+
+    <p>
+    Ota yhteyttä:
+    <a href="mailto:ville@example.fi">Lähetä sähköpostia</a>
+    <a href="tel:+358401234567">Soita</a>
+</p>
+    
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-opas - Tekniikka</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="../index.html">Etusivu</a>
+            <a href="tekniikka.html">Tekniikka</a>
+            <a href="projekti.html">Projekti</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>ESP32:n tekniikka</h1>
+
+        <section>
+            <h2>Suoritin ja muisti</h2>
+
+            <p>
+                ESP32-tuoteperheeseen kuuluu useita eri mikrokontrollereita,
+                joten niiden suorittimet, muistin määrä ja muut tekniset
+                ominaisuudet vaihtelevat mallin mukaan.
+            </p>
+
+            <p>
+                Eri ESP32-malleissa käytetään esimerkiksi yhden tai kahden
+                ytimen suorittimia. Myös käytettävissä olevan muistin määrä
+                riippuu käytetystä ESP32-mallista ja moduulista.
+            </p>
+        </section>
+
+        <section>
+            <h2>ESP32-mallit</h2>
+
+            <h3>ESP32</h3>
+
+            <p>
+                Alkuperäinen ESP32 on yksi ESP32-tuoteperheen tunnetuimmista
+                malleista. Se tukee Wi-Fi- ja Bluetooth-yhteyksiä ja soveltuu
+                monenlaisiin IoT-projekteihin.
+            </p>
+
+            <h3>ESP32-S2</h3>
+
+            <p>
+                ESP32-S2 on yhden ytimen mikrokontrolleri, joka on suunniteltu
+                esimerkiksi IoT-laitteisiin ja vähävirtaisiin sovelluksiin.
+            </p>
+
+            <h3>ESP32-S3</h3>
+
+            <p>
+                ESP32-S3 on kaksiytiminen ESP32-malli, jota voidaan käyttää
+                esimerkiksi IoT-, sulautetuissa ja koneoppimista hyödyntävissä
+                sovelluksissa.
+            </p>
+        </section>
+
+        <section>
+            <h2>ESP32-mallien vertailu</h2>
+
+            <table>
+                <caption>Esimerkkejä ESP32-tuoteperheen malleista</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Malli</th>
+                        <th scope="col">Ytimet</th>
+                        <th scope="col">Wi-Fi</th>
+                        <th scope="col">Bluetooth</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>ESP32</td>
+                        <td>2</td>
+                        <td>Kyllä</td>
+                        <td>Kyllä</td>
+                    </tr>
+
+                    <tr>
+                        <td>ESP32-S2</td>
+                        <td>1</td>
+                        <td>Kyllä</td>
+                        <td>Ei</td>
+                    </tr>
+
+                    <tr>
+                        <td>ESP32-S3</td>
+                        <td>2</td>
+                        <td>Kyllä</td>
+                        <td>Kyllä</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Langattomat yhteydet</h2>
+
+            <h3>Wi-Fi</h3>
+
+            <p>
+                Wi-Fi-yhteyden ansiosta ESP32 voidaan yhdistää langattomaan
+                verkkoon ja internetiin. Tätä voidaan hyödyntää esimerkiksi
+                älykoti- ja sääasemaprojekteissa.</p>
+
+            <h3>Bluetooth</h3>
+
+            <p>
+                Bluetooth mahdollistaa tiedonsiirron ESP32:n ja muiden
+                Bluetooth-laitteiden välillä. Käyttökohteita ovat esimerkiksi
+                puhelimella tapahtuva laitteen ohjaaminen.
+            </p>
+        </section>
+
+        <section>
+            <h2>GPIO-liitännät</h2>
+            <figure>
+            <img src="../espkuvat/esp32-gpio.jpeg" alt="ESP32-kehityskortin GPIO-liitännät" width="400">
+            <figcaption>ESP32-kehityskortin GPIO-liitännät.
+            </figcaption>
+            </figure>
+
+            <p>
+                GPIO-liitäntöjen avulla ESP32 voi lukea tietoa antureilta
+                ja ohjata erilaisia elektronisia komponentteja.
+            </p>
+
+            <h3>Yleisin käyttötapa</h3>
+
+            <ol>
+                <li>Kytke anturi ESP32:n GPIO-liitäntään.</li>
+                <li>Ohjelmoi ESP32 lukemaan anturin tietoja.</li>
+                <li>Käsittele saadut tiedot ohjelmassa.</li>
+                <li>Ohjaa niiden perusteella esimerkiksi LED-valoa tai muuta laitetta.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Termistöä</h2>
+
+            <dl>
+                <dt>GPIO</dt>
+                <dd>General Purpose Input/Output eli yleiskäyttöinen tulo- ja lähtöliitäntä.</dd>
+
+                <dt>IoT</dt>
+                <dd>Internet of Things eli esineiden internet.</dd>
+
+                <dt>SoC</dt>
+                <dd>System on Chip eli järjestelmäpiiri, johon on yhdistetty useita toimintoja samalle piirille.</dd>
+
+                <dt>Wi-Fi</dt>
+                <dd>Langaton verkkotekniikka, jonka avulla ESP32 voidaan yhdistää verkkoon.</dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <aside>
+            <h2>Hyvä tietää</h2>
+
+            <p>
+                ESP32-tuoteperheessä on paljon erilaisia malleja.
+                Sopiva malli kannattaa valita projektin tarvitsemien
+                ominaisuuksien perusteella.
+            </p>
+        </aside>
+
+    </main>
+
+<footer>
+        <p>&copy; 2026 ESP32-opas Ville Veijonen</p>
+
+        <p>
+            Lisätietoja:
+            <a href="https://www.espressif.com/en/products/socs/esp32">
+                Espressif Systems – ESP32</a>
+        </p>
+</footer>
+
+</body>
+</html>
