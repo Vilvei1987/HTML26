@@ -1,0 +1,47 @@
+body {
+    background-color: #AA7D39;
+    font-family: Verdana;
+    margin: 1% 5%;
+    line-height: 150%;
+}
+
+h1 {
+    margin: 1em 1.5em;
+}
+
+.navigointipalkki ul {
+    list-style-type: none;
+    background-color: rgb(100, 150, 200);
+    overflow: hidden;
+}
+
+.navigointipalkki li {
+    float: left;
+}
+
+.navigointipalkki a {
+    color: white;
+    padding: 0 40px;
+    text-decoration: none;
+}
+
+.navigointipalkki a:hover {
+    background-color: #19171E;
+}
+
+.kuva {
+    float: left;
+}
+
+.video {
+    width: 512px;
+    height: 288px;
+    float: left;
+    position: relative;
+    padding: 0px;
+    margin: 20px;
+}
+
+.vieraskirja {
+    text-align: center;
+}
