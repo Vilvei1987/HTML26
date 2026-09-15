@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas16</title>
+</head>
+<body>
+    <canvas id="virheCanvas" width="400" height="300"></canvas>  
+  
+<script>  
+  // Väärä id - tämä aiheuttaa virheen  
+  const canvas = document.getElementById("virheCanvas");  
+  console.log(canvas);  // tulostaa null  
+    
+  if (canvas === null) {  
+    console.error("Canvas-elementtiä ei löydy!");  
+  } else {  
+    const ctx = canvas.getContext("2d");  
+    ctx.fillStyle = "red";  
+    ctx.fillRect(50, 50, 100, 100);  
+  }  
+</script>  
+
+</body>
+</html>

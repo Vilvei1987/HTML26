@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG hymiö</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<svg width="200" height="200" viewBox="0 0 200 200" 
+        role="img"
+        aria-labelledby="otsikko kuvaus">
+    <title id="otsikko">Hymiö, joka muuttuu hymyiseksi</title>  
+    <desc id="kuvaus">Surullinen hymiö, joka muuttuu hymyileväksi, kun hiiri viedään sen päälle</desc>  
+
+
+    <!-- Kasvot -->
+    <circle id="hymio"
+            cx="100"
+            cy="100"
+            r="70"
+            fill="black"
+            stroke="red"
+            stroke-width="4"/>
+
+    <g id="silmät">  
+        <circle cx="75" cy="80" r="8" fill="red" />  
+        <circle cx="125" cy="80" r="8" fill="red" />  
+    </g>  
+
+
+    <!-- Suu -->
+    <path id="suu"
+          d="M 65 135 Q 100 110 135 135"
+          fill="none"
+          stroke="red"
+          stroke-width="6"/>
+
+          <text x="100" y="190" text-anchor="middle" font-size="18" fill="white">  
+  saatko minut hymyilemään?
+</text>  
+
+
+</svg>
+
+<script>
+    const hymio = document.getElementById("hymio");
+    const suu = document.getElementById("suu");
+
+    hymio.addEventListener("mouseenter", function() {
+        suu.setAttribute("d", "M 65 125 Q 100 155 135 125");
+    });
+
+    hymio.addEventListener("mouseleave", function() {
+        suu.setAttribute("d", "M 65 135 Q 100 110 135 135");
+    });
+</script>
+
+</body>
+</html>

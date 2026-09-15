@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG klikki</title>
+</head>
+
+<body>
+
+<svg width="400" height="250"
+     viewBox="0 0 400 250"
+     role="img"
+     aria-labelledby="otsikko kuvaus">
+
+    <title id="otsikko">Klikattava ympyrä</title>
+
+    <desc id="kuvaus">
+        Ympyrä vaihtaa väriä, kun sitä klikataan.
+    </desc>
+
+    <style>
+        .ympyra {
+            fill: #2563eb;
+            stroke: #111827;
+            stroke-width: 4;
+            cursor: pointer;
+        }
+    </style>
+
+    <circle id="ympyra"
+            class="ympyra"
+            cx="200"
+            cy="100"
+            r="60">
+    </circle>
+
+</svg>
+
+<script>
+    const ympyra = document.getElementById("ympyra");
+
+    ympyra.addEventListener("click", function() {
+        this.style.fill = "red";
+    });
+</script>
+
+</body>
+</html>

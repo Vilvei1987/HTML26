@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas11</title>
+</head>
+<body>
+
+    <canvas id="kuvaCanvas" width="400" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById("kuvaCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Luo uusi Image-olio
+        const kuva = new Image();
+
+        // Kun kuva on ladattu, piirrä se
+        kuva.onload = function() {
+            ctx.drawImage(kuva, 50, 50);
+        };
+
+        // Virheenkäsittely
+        kuva.onerror = function() {
+            console.log("Kuvan lataaminen epäonnistui");
+        };
+
+        // Aseta kuvan lähde
+        kuva.src = "kuvat/canvas.jpg";
+    </script>
+
+</body>
+</html>

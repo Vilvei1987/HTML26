@@ -1,0 +1,58 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>Animoitu putoava pallo</title>  
+</head>  
+<body>  
+  <canvas id="pallCanvas" width="600" height="400" style="border: 2px solid black;"></canvas>  
+    
+  <script>  
+    const canvas = document.getElementById("pallCanvas");  
+    const ctx = canvas.getContext("2d");  
+      
+    // Pallon sijainti ja nopeus  
+    let x = 300;  
+    let y = 200;  
+    let vx = 3;  
+    let vy = 2;  
+    const radius = 25;  
+      
+    function animoi() {  
+      // 1. Tyhjennä Canvas  
+      ctx.clearRect(0, 0, canvas.width, canvas.height);  
+        
+      // 2. Päivitä sijainti  
+      x = x + vx;  
+      y = y + vy;  
+        
+      if (x + radius > canvas.width) {
+    vx = -vx;
+}
+
+if (x - radius < 0) {
+    vx = -vx;
+}
+
+if (y + radius > canvas.height) {
+    vy = -vy;
+}
+
+if (y - radius < 0) {
+    vy = -vy;
+}
+        
+      // 4. Piirrä pallo  
+      ctx.beginPath();  
+      ctx.arc(x, y, radius, 0, Math.PI * 2);  
+      ctx.fillStyle = "blue";  
+      ctx.fill();  
+        
+      // 5. Pyydä seuraava animaatiokehys  
+      requestAnimationFrame(animoi);  
+    }  
+      
+    // Käynnistä animaatio  
+    animoi();  
+  </script>  
+</body>  
+</html>  

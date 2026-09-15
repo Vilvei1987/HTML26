@@ -1,0 +1,25 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>Käärmepeli Canvasilla</title>  
+  <link rel="stylesheet" href="css/tyylit.css">  
+</head>  
+<body>  
+  <h1>Käärmepeli</h1>  
+    
+  <div id="pisteet">Pisteet: <span id="pisteetArvo">0</span></div>  
+    
+  <canvas id="pelialue" width="400" height="400"   
+          role="img" aria-label="Matopeli, jossa pelaaja ohjaa käärmettä nuolinäppäimillä ja kerää ruokaa"></canvas>  
+    
+  <button id="uusiPeli">Uusi peli</button>  
+    
+  <div id="gameOver" style="display: none;">  
+    <h2>Peli päättyi!</h2>  
+    <p>Pisteet: <span id="lopputulos">0</span></p>  
+    <button id="pelaaUudelleen">Pelaa uudelleen</button>  
+  </div>  
+    
+  <script src="js/peli.js"></script>  
+</body>  
+</html>  

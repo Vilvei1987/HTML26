@@ -1,0 +1,106 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>Pieni Canvas-peli</title>  
+</head>  
+<body>  
+  <canvas id="peliCanvas" width="600" height="400" style="border: 2px solid black;"></canvas>  
+    
+  <div id="pisteet">Pisteet: <span id="pisteetArvo">0</span></div>  
+    
+  <script>  
+    const canvas = document.getElementById("peliCanvas");  
+    const ctx = canvas.getContext("2d");  
+      
+    // Pelaajan sijainti ja nopeus  
+    let x = 300;  
+    let y = 200;  
+    let vx = 0;  
+    let vy = 0;  
+    const pelaajaRadius = 20;  
+      
+    // Kerättävän objektin sijainti  
+    let asiaX = 100;  
+    let asiaY = 100;  
+    const asiaRadius = 15;  
+      
+    // Pisteet  
+    let pisteet = 0;  
+      
+    // Näppäimistötapahtumat  
+    document.addEventListener("keydown", function(event) {
+
+    if (event.key === "ArrowRight") {
+        vx = 3;
+        vy = 0;
+    }
+
+    if (event.key === "ArrowLeft") {
+        vx = -3;
+        vy = 0;
+    }
+
+    if (event.key === "ArrowUp") {
+        vx = 0;
+        vy = -3;
+    }
+
+    if (event.key === "ArrowDown") {
+        vx = 0;
+        vy = 3;
+    }
+
+});
+      
+    function animoi() {  
+      // 1. Tyhjennä Canvas  
+      ctx.clearRect(0, 0, canvas.width, canvas.height);  
+        
+      // 2. Päivitä pelaajan sijainti  
+      x = x + vx;  
+      y = y + vy;  
+        
+      // 3. Tarkista törmäys kerättävään objektiin  
+      function tarkistaTormays() {
+    const dx = x - asiaX;
+    const dy = y - asiaY;
+
+    const etaisyys = Math.sqrt(dx * dx + dy * dy);
+
+    if (etaisyys < pelaajaRadius + asiaRadius) {
+        return true;
+    }
+
+    return false;
+}
+    if (tarkistaTormays()) {
+    pisteet++;
+
+    document.getElementById("pisteetArvo").textContent = pisteet;
+
+    // Siirretään punainen objekti uuteen paikkaan
+    asiaX = Math.random() * (canvas.width - asiaRadius * 2) + asiaRadius;
+    asiaY = Math.random() * (canvas.height - asiaRadius * 2) + asiaRadius;
+}
+        
+      // 4. Piirrä pelaaja  
+      ctx.beginPath();  
+      ctx.arc(x, y, pelaajaRadius, 0, Math.PI * 2);  
+      ctx.fillStyle = "blue";  
+      ctx.fill();  
+        
+      // 5. Piirrä kerättävä objekti  
+      ctx.beginPath();  
+      ctx.arc(asiaX, asiaY, asiaRadius, 0, Math.PI * 2);  
+      ctx.fillStyle = "red";  
+      ctx.fill();  
+        
+      // 6. Pyydä seuraava animaatiokehys  
+      requestAnimationFrame(animoi);  
+    }  
+      
+    // Käynnistä animaatio  
+    animoi();  
+  </script>  
+</body>  
+</html>  

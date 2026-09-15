@@ -1,0 +1,25 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <style>  
+    /* CSS vain näyttökoko, ei piirtokoko */  
+    #piirtoalue {  
+      width: 600px;  
+      height: 400px;  
+      border: 2px solid black;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <!-- HTML-attribuutit määrittävät piirtokoon -->  
+  <canvas id="piirtoalue" width="600" height="400"></canvas>  
+    
+  <script>  
+    const canvas = document.getElementById("piirtoalue");  
+    const ctx = canvas.getContext("2d");  
+      
+    ctx.fillStyle = "red";  
+    ctx.fillRect(0, 0, 300, 400);  // puolikas punainen neliö  
+  </script>  
+</body>  
+</html>  

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas15</title>
+</head>
+<body>
+
+<canvas id="reunaCanvas" width="400" height="300"></canvas>
+
+<script>
+    const canvas = document.getElementById("reunaCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Pallo 1
+    let x1 = 50;
+    let y1 = 150;
+    let vx1 = 3;
+    let vy1 = 2;
+
+    // Pallo 2
+    let x2 = 20;
+    let y2 = 100;
+    let vx2 = 4;
+    let vy2 = 3;
+
+    const radius = 20;
+
+    function animoi() {
+
+        // Tyhjennä Canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // ===== PALLO 1 =====
+
+        x1 = x1 + vx1;
+        y1 = y1 + vy1;
+
+        // Oikea ja vasen reuna
+        if (x1 + radius > canvas.width || x1 - radius < 0) {
+            vx1 = -vx1;
+        }
+
+        // Ala- ja yläreuna
+        if (y1 + radius > canvas.height || y1 - radius < 0) {
+            vy1 = -vy1;
+        }
+
+        // Piirrä pallo 1
+        ctx.beginPath();
+        ctx.arc(x1, y1, radius, 0, Math.PI * 2);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+
+
+        // ===== PALLO 2 =====
+
+        x2 = x2 + vx2;
+        y2 = y2 + vy2;
+
+        // Oikea ja vasen reuna
+        if (x2 + radius > canvas.width || x2 - radius < 0) {
+            vx2 = -vx2;
+        }
+
+        // Ala- ja yläreuna
+        if (y2 + radius > canvas.height || y2 - radius < 0) {
+            vy2 = -vy2;
+        }
+
+        // Piirrä pallo 2
+        ctx.beginPath();
+        ctx.arc(x2, y2, radius, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+
+        // Pyydä seuraava animaatiokehys
+        requestAnimationFrame(animoi);
+    }
+
+    // Käynnistä animaatio
+    animoi();
+</script>
+
+</body>
+</html>
+

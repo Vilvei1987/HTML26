@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas13</title>
+</head>
+<body>
+<canvas id="tapahtumaCanvas" width="400" height="300"></canvas>  
+  
+<script>  
+  const canvas = document.getElementById("tapahtumaCanvas");  
+  const ctx = canvas.getContext("2d");  
+    
+  // Kuuntele klikkaustapahtumaa  
+  canvas.addEventListener("click", function(event) {  
+    // Hae Canvasin sijainti sivulla  
+    const rect = canvas.getBoundingClientRect();  
+      
+    // Muuta hiirikoordinaatit Canvas-koordinaateiksi  
+    const x = event.clientX - rect.left;  
+    const y = event.clientY - rect.top;  
+      
+    // Piirrä ympyrä klikatun kohdan päälle  
+    ctx.beginPath();  
+    ctx.arc(x, y, 15, 0, Math.PI * 2);  
+    ctx.fillStyle = "blue";  
+    ctx.fill();  
+  });  
+</script>  
+
+</body>
+</html>

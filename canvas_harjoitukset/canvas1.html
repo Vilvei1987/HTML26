@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+
+    <canvas id="minunCanvas" width="500" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById("minunCanvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "red";
+        ctx.fillRect(400, 225, 100, 75);
+    </script>
+
+</body>
+</html>

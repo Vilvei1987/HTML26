@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Piirto-ohjelma</title>
+</head>
+<body>
+
+  <canvas id="piirtoCanvas" width="600" height="400"
+    style="border: 2px solid black;"></canvas>
+
+  <div>
+    Väri:
+    <button onclick="vaihdaVari('red')">Punainen</button>
+    <button onclick="vaihdaVari('blue')">Sininen</button>
+    <button onclick="vaihdaVari('green')">Vihreä</button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("piirtoCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let hiiriAlhaalla = false;
+    let edellinenX = 0;
+    let edellinenY = 0;
+    let vari = "black";
+
+    // Hiiren painallus
+    canvas.addEventListener("mousedown", function(event) {
+      hiiriAlhaalla = true;
+
+      const rect = canvas.getBoundingClientRect();
+      edellinenX = event.clientX - rect.left;
+      edellinenY = event.clientY - rect.top;
+    });
+
+    // Hiiren liike
+    canvas.addEventListener("mousemove", function(event) {
+      if (hiiriAlhaalla) {
+        const rect = canvas.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        ctx.beginPath();
+        ctx.moveTo(edellinenX, edellinenY);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = vari;
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        edellinenX = x;
+        edellinenY = y;
+      }
+    });
+
+    // Hiiren vapautus
+    canvas.addEventListener("mouseup", function() {
+      hiiriAlhaalla = false;
+    });
+
+    function vaihdaVari(uusiVari) {
+      vari = uusiVari;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas2</title>
+</head>
+<body>
+
+  <canvas id="omaCanvas" width="600" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById("omaCanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(400, 225, 100, 75);
+
+    console.log(canvas);
+  </script>
+
+</body>
+</html>

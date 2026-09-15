@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+<canvas id="testiCanvas" width="400" height="300"></canvas>  
+  
+<script>  
+  const canvas = document.getElementById("testiCanvas");  
+  const ctx = canvas.getContext("2d");  // hakee 2D-piirtokontekstin  
+    
+  ctx.fillStyle = "blue";  
+  ctx.fillRect(75, 50, 150, 100);  
+</script> 
+</body>
+</html> 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas6</title>
+</head>
+<body>
+    <canvas id="suorakulmioCanvas" width="400" height="300"></canvas>  
+  
+<script>  
+  const canvas = document.getElementById("suorakulmioCanvas");  
+  const ctx = canvas.getContext("2d");  
+    
+  // Täytetty suorakulmio  
+  ctx.fillStyle = "green";  
+  ctx.fillRect(30, 30, 120, 80);  
+    
+  // Reunaviivallinen suorakulmio  
+  ctx.strokeStyle = "red";  
+  ctx.lineWidth = 5;  
+  ctx.strokeRect(30, 30, 120, 80);  
+    
+  // Tyhjennetään alue keskeltä  
+  ctx.clearRect(70, 50, 40, 40);  
+</script>  
+
+</body>
+</html>

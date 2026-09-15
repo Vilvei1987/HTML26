@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas9</title>
+</head>
+<body>
+    <canvas id="ympyraCanvas" width="400" height="300"></canvas>  
+  
+<script>  
+  const canvas = document.getElementById("ympyraCanvas");  
+  const ctx = canvas.getContext("2d");  
+    
+  // Aloita polku  
+  ctx.beginPath();  
+    
+  // Piirrä ympyrä: keskipiste (200, 150), säde 50, 0 → 2π  
+  ctx.arc(150, 150, 60, 0, Math.PI * 2);  
+    
+  // Täytä sinisellä  
+  ctx.fillStyle = "red";  
+  ctx.fill();  
+    
+  // Piirrä musta reunaviiva  
+  ctx.strokeStyle = "green";  
+  ctx.lineWidth = 4;  
+  ctx.stroke();  
+</script>  
+
+</body>
+</html>

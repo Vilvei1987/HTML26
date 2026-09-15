@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas8</title>
+</head>
+<body>
+    <canvas id="polkuCanvas" width="400" height="300"></canvas>  
+  
+<script>  
+  const canvas = document.getElementById("polkuCanvas");  
+  const ctx = canvas.getContext("2d");  
+    
+  // Aloita uusi polku  
+  ctx.beginPath();  
+    
+  // Siirrä aloituspisteeseen  
+  ctx.moveTo(150, 50);  
+    
+  // Piirrä viiva pisteeseen (200, 200)  
+  ctx.lineTo(250, 200);  
+    
+  // Piirrä viiva pisteeseen (50, 200)  
+  ctx.lineTo(50, 200);  
+    
+  // Sulje polku (palaa aloituspisteeseen)  
+  ctx.closePath();  
+    
+  // Piirrä reunaviiva  
+  ctx.strokeStyle = "black";  
+  ctx.lineWidth = 4;  
+  ctx.stroke();  
+    
+  // Täytä polku  
+  ctx.fillStyle = "yellow";  
+  ctx.fill();  
+</script>  
+
+</body>
+</html>

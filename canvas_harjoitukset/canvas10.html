@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas10</title>
+</head>
+<body>
+    <canvas id="tekstiCanvas" width="400" height="300"></canvas>  
+  
+<script>  
+  const canvas = document.getElementById("tekstiCanvas");  
+  const ctx = canvas.getContext("2d");  
+    
+    
+  // Täytetty teksti  
+  ctx.fillStyle = "black";  
+  ctx.fillText("Hei maailma!", 50, 80);
+  ctx.font = "30px Arial";  
+    
+  // Reunaviivallinen teksti  
+  ctx.strokeStyle = "blue";  
+  ctx.lineWidth = 2;  
+  ctx.strokeText("Canvas-ohjelmointi", 50, 140);
+  ctx.font = "20px Verdana";  
+    
+  // Keskittyvä teksti  
+  ctx.textAlign = "center";  
+  ctx.fillStyle = "red";  
+  ctx.fillText("Keskellä", 200, 220);
+  ctx.font = "25px Georgia";  
+</script>  
+
+</body>
+</html>

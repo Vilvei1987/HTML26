@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas12</title>
+</head>
+<body>
+
+    <canvas id="animaatioCanvas" width="400" height="300"></canvas>
+
+<script>
+    const canvas = document.getElementById("animaatioCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let x = 50;   // pallon x-koordinaatti
+    let y = 150;  // pallon y-koordinaatti
+
+    function piirra() {
+
+        // 1. Tyhjennä Canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 2. Päivitä sijainti
+        x = x + 2;  // liikuta oikealle
+        y = y + 1;  // liikuta alaspäin
+
+        // 3. Piirrä pallo
+        ctx.beginPath();
+        ctx.arc(x, y, 20, 0, Math.PI * 2);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+    }
+
+    // Kutsu piirra-funktiota useita kertoja
+    piirra();
+    piirra();
+    piirra();
+</script>
+
+</body>
+</html>

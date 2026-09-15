@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas7</title>
+</head>
+<body>
+    <canvas id="variCanvas" width="400" height="300"></canvas>  
+  
+<script>  
+  const canvas = document.getElementById("variCanvas");  
+  const ctx = canvas.getContext("2d");  
+    
+  // Täytetty suorakulmio punaisella (nimetty väri)  
+  ctx.fillStyle = "orange";  
+  ctx.fillRect(40, 40, 120, 90);  
+    
+  // Reunaviivallinen suorakulmio sinisellä RGB-arvolla  
+  ctx.strokeStyle = "black";  
+  ctx.lineWidth = 4;  
+  ctx.strokeRect(40, 40, 120, 90);  
+    
+  // Läpinäkyvä vihreä suorakulmio päällekkäin  
+  ctx.fillStyle = "rgba(0, 0, 255, 0.3)";  
+  ctx.fillRect(80, 70, 120, 90);  
+</script>  
+
+</body>
+</html>
