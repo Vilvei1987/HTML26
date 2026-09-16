@@ -33,4 +33,5 @@ button {
 
 button:hover {
   background-color: lightgreen;
+  border: 5px solid darkgreen;
 }
