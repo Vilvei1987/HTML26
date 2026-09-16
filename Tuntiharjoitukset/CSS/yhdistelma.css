@@ -1,0 +1,11 @@
+.post > h2 {
+    color: blue;
+}
+
+.post > h2 + p {
+    color: brown;
+}
+
+.post p {
+    color: green;
+}

@@ -1,0 +1,36 @@
+input[type="email"] {
+  border-color: grey;
+  border-radius: 10px;
+  
+  
+}
+
+input[required] {
+  background-color: gray;
+  border-radius: 6px;
+  
+  
+}
+
+:focus-visible {
+  outline: 2px solid black;
+}
+
+input:checked {
+  accent-color: green;
+  
+}
+
+button {
+  background-color: darkgreen;
+  color: darkgrey;
+  border: 5px solid lightgreen;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: lightgreen;
+}
