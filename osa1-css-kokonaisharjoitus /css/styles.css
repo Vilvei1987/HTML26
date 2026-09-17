@@ -1,0 +1,120 @@
+/*
+  CSS-kokonaisharjoitus – Osa 1
+  Täydennä alla olevat säännöt tehtäväsivun vaatimusten mukaan.
+
+  Tässä harjoituksessa EI käytetä Flexboxia tai Gridiä.
+*/
+
+/* 1. Elementtivalitsin
+   Aseta sivulle margin, fontti, fonttikoko, rivikorkeus,
+   tekstin väri ja taustaväri. */
+body {
+  margin: 15px;
+  background-color: lightgray;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: blue;
+  line-height: 1.5;
+}
+
+/* 2. Ryhmittelyvalitsin
+   Anna h1-, h2- ja h3-otsikoille sama tekstiväri. */
+h1,
+h2,
+h3 {
+  /* Kirjoita ominaisuus tähän. */
+  color: black;
+  text-align: center;
+}
+
+/* 3. Elementtivalitsin
+   Valitse linkeille tekstiväri. */
+a {
+  color: green;
+  /* Kirjoita ominaisuus tähän. */
+}
+
+/* 4. Luokkavalitsimet
+   Rajaa sisältö enimmäisleveyteen, keskitä se ja lisää sisätilaa. */
+.site-header,
+main,
+.site-footer {
+  /* Kirjoita ominaisuudet tähän. */
+  max-width: 800px;
+  padding: 20px;
+  margin: 10px auto;
+}
+
+/* 5. Luokkavalitsin
+   Lisää kortille ulkoväli, sisätila, tausta, reuna ja pyöristetyt kulmat. */
+.card {
+  background-color: pink;
+  padding: 25px;
+  margin: 10px;
+  border: 3px solid darkgray;
+  border-radius: 15px;
+  /* Kirjoita ominaisuudet tähän. */
+}
+
+/* 6. ID-valitsin
+   Lisää ylätunnisteen alareunaan erottuva reunaviiva. */
+#top {
+  /* Kirjoita ominaisuus tähän. */
+  border-bottom: 4px solid black;
+}
+
+/* 7. Luokkavalitsin
+   Tee linkistä painikkeen näköinen väreillä, reunalla, sisätilalla
+   ja pyöristyksellä. Poista tavallinen alleviivaus. */
+.button {
+  /* Kirjoita ominaisuudet tähän. */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: green;
+    text-decoration: none;
+    border: 4px solid green;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+/* 8. Valitse vielä vähintään yksi sivun luokka ja tee sille oma sääntö.
+   Esimerkkejä: .hero, .eyebrow, .card__badge tai .site-footer. */
+.nav-list {
+    list-style: none;
+    padding: 5px 20px;
+    background-color: lightblue;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid gray;
+}
+.brand {
+    padding: 5px 20px;
+    background-color: lightblue;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.card__badge {
+  color: gray;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.hero {
+  background-color: lightsalmon;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 6px solid gray;
+  padding: 8px;
+  margin: 3px;
+}
+.help-button {
+  color: red;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 40px;
+  border-color: black;
+}
+.help-button:hover {
+color: white;
+background-color: red;
+}
