@@ -1,0 +1,231 @@
+/* Yleiset asetukset */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222;
+    background-color: #e9e9e9;
+}
+
+
+/* Otsikot */
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+
+/* Yläpalkki */
+
+.site-header {
+    padding: 15px 20px;
+    background-color: #333;
+    border-radius: 12px;
+}
+
+
+/* Sivun nimi */
+
+.brand {
+    color: aqua;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* Navigaatio */
+
+.nav-list {
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+    text-align: center;
+}
+
+.nav-list a {
+    color: white;
+    margin: 0 8px;
+    text-decoration: none;
+}
+
+.nav-list a:hover {
+    color: aqua;
+}
+
+
+/* Pääsisältö */
+
+#main-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #f7f7f7;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+}
+
+
+/* Hero-alue */
+
+.hero {
+    margin: 10px;
+    padding: 30px 20px;
+    background-color: #d9ffff;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+/* Pieni otsikkoteksti */
+
+.eyebrow {
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* Hero-teksti */
+
+.hero__lead {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+
+/* Kortin numero */
+
+.card__badge {
+    display: inline-block;
+    padding: 4px 8px;
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+
+/* Kortin otsikko */
+
+.card__title {
+    color: #1d4ed8;
+    text-align: center;
+}
+
+
+/* Kortti */
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin: 10px;
+    padding: 23px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    overflow: auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card--featured {
+    border: 8px solid #ccc;
+}
+
+
+/* Painike */
+
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    color: white;
+    background-color: #2563eb;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+
+/* Kortin sisällä oleva painike */
+
+.card .button {
+    margin: 10px 0;
+    background-color: green;
+}
+
+
+/* Painikkeen hover */
+
+.button:hover {
+    background-color: #174ea6;
+}
+
+
+/* Ohjepainike */
+
+.help-button {
+    padding: 8px 14px;
+    margin: 5px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+/* Ohjepainikkeen hover */
+
+.help-button:hover {
+    background-color: tomato;
+    color: blue;
+}
+
+
+/* Fokus */
+
+a:focus,
+button:focus {
+    outline: 3px solid black;
+    outline-offset: 3px;
+    border-radius: 5px;
+}
+
+
+/* Alatunniste */
+
+.site-footer {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 12px;
+}

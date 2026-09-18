@@ -1,0 +1,137 @@
+/* Yleiset asetukset */
+body {
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #222;
+    background-color: lightgray;
+}
+
+/* Otsikot */
+h1, h2, h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* ID-valitsin */
+#main-content {
+    width: 100%;  
+}
+
+/* Kortin numero */
+.card__badge {
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    text-decoration-color: blue;
+    margin: 5px;
+}
+
+/* Painike */
+.button {
+    color: red;
+}
+
+/* Kortin sisällä oleva painike */
+.card .button {
+    color: green;
+    margin: 10px;
+}
+
+/* Yläpalkki */
+.site-header {
+    background-color: gray;
+}
+
+/* Pääsisältö */
+#main-content {
+    background-color: pink;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+/* Ohjepainike */
+.help-button {
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+/* Kun hiiri on painikkeen päällä */
+.help-button:hover {
+    background-color: tomato;
+    color: blue;
+}
+
+/* Kortin otsikko */
+.card__title {
+    color: blue;
+    text-align: center;
+}
+
+/* Kortti */
+.card {
+    background-color: lightgray;
+    box-sizing: border-box;
+    border: 2px solid gray;
+    border-radius: 8px;
+    margin: 4px;
+}
+
+/* Alatunniste */
+.site-footer {
+    background-color: aquamarine;
+    font-size: 14px;
+}
+
+/* Poistaa listan pisteet */
+.nav-list {
+    list-style: none;
+    text-align: center;
+}
+
+/* Hero-alue */
+.hero {
+    background-color: aqua;
+    border-radius: 15px;
+    margin: 10px;   
+}
+
+/* Tekstin keskitys */
+.eyebrow {
+    text-align: center;
+}
+
+/* Hero-tekstin keskitys */
+.hero__lead {
+    text-align: center;
+}
+
+/* Valitsee linkin, jossa on aria-current */
+a[aria-current="page"] {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Sivun nimi */
+.brand {
+    color: aqua;
+}
+
+
+/* Cascade-esimerkki */
+
+/* Tämä antaa painikkeelle punaisen värin */
+.button {
+    color: red;
+}
+
+/* Tämä voittaa ylemmän .button-säännön,
+   koska tässä on kaksi luokkaa */
+.card .button {
+    color: green;
+}
