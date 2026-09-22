@@ -1,0 +1,30 @@
+body {
+    background-color: lightgray;
+}
+
+.laatikko1 {
+    background-color: blue;
+    display: inline;
+    margin: 5px;
+    padding: 5px;
+    line-height: 1.5;
+}
+
+.laatikko2 {
+    background-color: green;
+    display: block;
+    margin: 5px;
+    padding: 10px;
+    width: 300px;
+    line-height: 1.5;
+
+}
+
+.laatikko3 {
+    background-color: red;
+    display: inline-block;
+    margin: 5px;
+    padding: 15px;
+    width: 300px;
+    line-height: 1.5;
+}
