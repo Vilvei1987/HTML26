@@ -1,0 +1,18 @@
+.toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.help {
+    background-color: red;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    border-radius: 10px;
+}
+
+main {
+  padding-bottom: 60px; 
+}
