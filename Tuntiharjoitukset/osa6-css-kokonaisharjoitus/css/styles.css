@@ -1,0 +1,148 @@
+/* 1. CSS:n perusteet */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;
+    background-color: black;
+}
+
+h1, h2, p {
+    color: #38bdf8;
+    text-align: center;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+#top {
+    border-bottom: 3px solid #38bdf8;
+}
+
+
+/* 2. Selectorit ja cascade */
+
+.card p {
+    color: #d4d4d8;
+}
+
+.card > h2 {
+    color: #38bdf8;
+}
+
+.card h2 + p {
+    font-weight: bold;
+}
+
+
+/* 3. Box Model */
+
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    width: 400px;
+    height: 210px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+    border: 3px solid #2563eb;
+    border-radius: 10px;
+    background-color: #27272a;
+    overflow: auto;
+}
+
+
+/* 4. Display ja normaalivirta */
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* 5. Positionointi */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 15px;
+    background-color: #18181b;
+}
+
+.card {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.help-button {
+    background-color: #38bdf8;
+    border-radius: 15px;
+    border: 3px solid white;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 20;
+}
+
+.help-button:hover {
+    background-color: limegreen;
+    color: red;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 3px solid red;
+}
+
+/* 6. Flexbox */
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    flex: 1;
+}
+
+.card__badge {
+    text-decoration: underline;
+    color: limegreen;
+}
+
+.site-footer p {
+    color: white;
+}
+
+.site-footer {
+    border: 3px solid limegreen;
+    border-radius: 15px;
+}
