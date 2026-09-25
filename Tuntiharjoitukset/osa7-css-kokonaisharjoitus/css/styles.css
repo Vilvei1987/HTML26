@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;
+    background-color: black;
+}
+
+h1, h2, p {
+    color: #19b4f6;
+    text-align: center;
+}
+
+a {
+    color: #19b4f6;
+    text-decoration: none;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgb(43, 38, 38);
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#main-content {
+    text-align: center;
+    box-sizing: border-box; 
+    border: 3px solid #19b4f6;
+    border-radius: 15px;
+    padding: 5px; 
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+
+
+}
+
+.nav-list a {
+    color: black;
+}
+
+.nav-list li {
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+
+.nav-list a:hover {
+    color: white;
+}
+.button[href^="#"] {
+    box-sizing: border-box;
+    border: 3px solid;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.card {
+    position: relative;
+    box-sizing: border-box;
+    border: 3px solid pink;
+    border-radius: 15px;
+    padding: 5px;
+    max-width: 50%;
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+}
+
+.card__badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-decoration: underline;
+    color: pink;
+}
+
+.help-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    border: 2px solid #19b4f6;
+    border-radius: 15px;
+}
+
+.help-button:hover {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: red;
+    border: 2px solid green;
+    border-radius: 15px;
+}
+
+.card-list {
+    height: 500px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns:
+    repeat(3, 1fr);
+    gap: 1.5rem; 
+}
+
