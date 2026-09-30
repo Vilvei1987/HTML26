@@ -1,0 +1,51 @@
+:root {
+  --bg: #101520;
+  --surface: #10223b;  
+  --text: lightgray;     
+  --accent: #5053e9;   
+  --danger: #ee2f2f;
+  --border: black;   
+}
+
+.card {
+  background: var(--surface);
+  color: var(--text);
+  padding: 1rem;
+  margin: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+}
+
+.button {
+  background: var(--accent);
+  color: var(--text);
+  border: 2px solid var(--border);
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 1.5s;
+
+}
+
+.button:hover {
+    background: var(--text);
+    color: var(--accent);
+    transform: translate(25px) rotate(-25deg);
+    
+}
+
+
+.alert {
+  background: var(--surface);
+  color: var(--danger);
+  border: 2px solid var(--border);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.alert:hover {
+    background: var(--danger);
+    color: var(--surface);
+    border: 2px solid var(--surface);
+}
