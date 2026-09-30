@@ -4,7 +4,7 @@
   --text: rgb(133, 207, 148);     
   --accent: #5053e9;   
   --danger: #ee2f2f;
-  --border: black; 
+  --border: black;  
   --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);  
 }
 
@@ -40,7 +40,7 @@ body {
 .button:hover {
     background: var(--text);
     color: var(--accent);
-    transform: translate(25px) rotate(-25deg);
+    transform: translateY(-15px) rotate(-25deg);
     
 }
 
@@ -58,4 +58,47 @@ body {
     background: var(--danger);
     color: var(--surface);
     border: 2px solid var(--surface);
+}
+
+.hero {
+  background-image: linear-gradient(
+    rgba(59, 62, 70, 0.65),
+    rgba(133, 207, 148)
+), url(../kuvat/tipu.jpeg);
+  background-size: cover;
+  background-position: center;
+  min-height: 1200px;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 10px;
+}
+.hero p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cta {
+   background-image: url(../kuvat/carbon.jpeg);
+  color: var(--text);
+  border: 2px solid var(--border);
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.5s;
+  box-shadow: var(--shadow);
+}
+
+.cta:hover {
+    background: var(--text);
+    color: var(--accent);
+    transform: translateX(3px) translateY(-3px);
+    
 }
