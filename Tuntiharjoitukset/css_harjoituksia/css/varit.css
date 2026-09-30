@@ -1,10 +1,16 @@
 :root {
-  --bg: #101520;
+  --bg: #3b3e46;
   --surface: #10223b;  
-  --text: lightgray;     
+  --text: rgb(133, 207, 148);     
   --accent: #5053e9;   
   --danger: #ee2f2f;
-  --border: black;   
+  --border: black; 
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);  
+}
+
+body {
+    background: var(--bg);
+    color: var(--text)
 }
 
 .card {
@@ -14,6 +20,7 @@
   margin: 1rem;
   border: 2px solid var(--border);
   border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
 .button {
@@ -25,6 +32,8 @@
   border-radius: 10px;
   cursor: pointer;
   transition: transform 1.5s;
+  box-shadow: var(--shadow);
+
 
 }
 
@@ -42,6 +51,7 @@
   border: 2px solid var(--border);
   padding: 1rem;
   border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
 .alert:hover {
