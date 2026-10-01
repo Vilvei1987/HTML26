@@ -1,0 +1,36 @@
+:root {
+    --text-body: 1rem;
+    --text-h2: 2rem;
+    --leading-body: 1.65;
+    --text-font: arial, sans-serif, system-ui;
+    --text-font2: Georgia;
+    --text-font3: Tahoma;
+}
+
+article {
+    max-width: 60ch;
+    font-family: var(--text-font);
+    line-height: var(--leading-body);
+
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-family: var(--text-font3);
+
+}
+
+h2 {
+    font-size: var(--text-h2);
+    font-family: var(--text-font2);
+}
+
+p {
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+}
+
+h3 {
+    font-size: var(--text-h2);
+    font-family: var(--text-font3);
+}

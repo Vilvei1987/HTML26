@@ -1,0 +1,50 @@
+:root {
+    --main-color: lightgray;
+    --color: green;
+}
+
+body {
+    background-color: var(--main-color);
+}
+
+.card {
+    min-height: 220px;
+}
+
+.card h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    box-sizing: border-box;
+    border: 2px solid var(--color);
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+
+}
+
+.card p {
+    box-sizing: border-box;
+    border: 2px solid var(--color);
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+.card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 2rem;
+    background-color: var(--main-color);
+    color: var(--color);
+    text-decoration: none;
+}
+.card a:hover {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border: 2px solid var(--main-color);
+    border-radius: 2rem;
+    background-color: var(--color);
+    color: var(--main-color);
+    text-decoration: underline;
+    
+}
