@@ -1,0 +1,197 @@
+:root {
+ --bg: #171a21;
+    --surface: #222936;
+    --text: #7ee2c1;
+    --accent: #6c7cff;
+    --border: #3a4354;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    --outline: 4px solid #ff6b8a;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.nappi1 {
+    background: var(--surface);
+    color: var(--text);
+    padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 3s;
+}
+
+.nappi1:hover {
+    transform: rotate(360deg) scale(1.5);
+    background-color: var(--surface);
+}
+
+.nappi2 {
+    background: var(--surface);
+    color: var(--text);
+    padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.7s;
+}
+
+.nappi2:hover {
+    color: var(--border);
+    transform: translateY(-15px) scale(0.9);
+}
+
+.nappi3 {
+    background: var(--surface);
+    color: var(--text);
+    padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.7s;
+}
+
+.nappi3:hover {
+    background-color: var(--text);
+    color: var(--surface);
+    transform: translateX(10px) rotate(-20deg) scale(1.1);
+}
+
+.nappi1:focus-visible, 
+.nappi2:focus-visible,
+.nappi3:focus-visible,
+.nappi4:focus-visible {
+    outline: var(--outline);
+}
+
+.napit {
+    display: flex;
+    padding: 25px;
+    gap: 10px;
+    background-color: gray;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+@keyframes nappi4-pulse {
+    0% {
+        transform: scale(1) skew(5deg);
+        box-shadow: var(--shadow);
+    }
+    50% {
+        transform: scale(1.1) skew(-5deg);
+        background-color: var(--text);
+        color: var(--surface);
+        box-shadow: 0 0 20px var(--text);
+    }
+    100% {
+        transform: scale(1) skew(5deg);
+        box-shadow: var(--shadow);
+    }
+}
+
+.nappi4 {
+    background: var(--surface);
+    color: var(--text);
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    animation: nappi4-pulse 9.5s infinite ease-in-out;
+}
+
+.nappi4:hover {
+    animation-play-state: paused;
+    background-color: var(--accent);
+    color: white;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    margin: 1rem;
+    background-color: var(--text);
+    border: 5px solid var(--bg);
+    border-top: 5px solid var(--surface);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel {
+    background-color: var(--surface);
+    color: var(--text);
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes notice-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 15px var(--accent);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.notice {
+    background-color: var(--surface);
+    color: var(--text);
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    animation: notice-pulse 1.2s ease-in-out 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nappi1,
+    .nappi2,
+    .nappi3,
+    .nappi4,
+    .panel,
+    .notice {
+        transition: none;
+        animation: none;
+    }
+
+    .spinner {
+        animation: spin 5s linear infinite;
+    }
+}

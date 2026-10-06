@@ -43,7 +43,7 @@ body {
 }
 
 .nappi:active {
-    transform: rotate(-25deg)
+    transform: rotate(-25deg);
 }
 
 .nappi:disabled {
