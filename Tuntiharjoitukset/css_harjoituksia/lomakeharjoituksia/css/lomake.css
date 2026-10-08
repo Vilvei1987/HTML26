@@ -21,6 +21,10 @@ header {
     
 }
 
+h1 {
+    text-shadow: 0 2px 8px rgba(46, 194, 126, 0.4);
+}
+
 form {
     max-width: 400px;
     margin: 60px auto;
@@ -28,6 +32,7 @@ form {
     background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
+    box-shadow:  0 0 20px rgba(46, 194, 126, 0.15);
 }
 
 label {
@@ -110,3 +115,10 @@ button:disabled {
 button:disabled:hover {
     transform: scale(1);
 }
+
+footer {
+    text-align: center;
+    border-top: 3px solid var(--border);
+}
+
+
