@@ -1,0 +1,112 @@
+:root {
+    --bg: #101312;
+    --surface: #181d1a;
+    --surface-hover: #202722;
+    --text: #e7ebe8;
+    --text-muted: #8d9991;
+    --accent: #2ec27e;
+    --accent-hover: #38d98c;
+    --border: #303933;
+    --error: #e05252;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+header {
+    border-bottom: 3px solid var(--border);
+    
+}
+
+form {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 2rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+input:focus,
+button:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+input:valid {
+    border-color: var(--accent);
+}
+
+input:invalid {
+    color: var(--text);
+}
+
+input:user-invalid {
+    border-color: var(--error);
+}
+
+input[type="checkbox"]:checked {
+    accent-color: var(--accent);
+}
+
+.checkbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+button {
+    display: block;
+    width: 40%;
+    margin: 10px auto 0;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent);
+    color: #101312;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    background-color: var(--text-muted);
+    color: var(--bg);
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    transform: scale(1);
+}

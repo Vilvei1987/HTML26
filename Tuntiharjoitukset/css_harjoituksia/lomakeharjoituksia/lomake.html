@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lomake</title>
+    <link rel="stylesheet" href="css/lomake.css">
+</head>
+<body>
+    <header>
+        <h1>Rekisteröidy</h1>
+    </header>
+    <form>
+    <label for="nimi">Nimi:</label>
+    <input type="text" id="nimi" required>
+
+    <label for="email">Sähköposti:</label>
+    <input type="email" id="email" required>
+
+    <label for="salasana">Salasana:</label>
+    <input type="password" id="salasana" required minlength="8">
+
+    <label for="confirm">Salasanan vahvistus:</label>
+    <input type="password" id="confirm" required>
+
+    <label class="checkbox">
+    Hyväksyn ehdot:
+    <input type="checkbox">
+    </label>
+    
+    <button>Lähetä</button>
+    <button disabled>Ei käytössä</button>
+
+</form>
+</body>
+</html>
