@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painikkeet ja lomake</title>
+    <link rel="stylesheet" href="css/pseudo.css">
+</head>
+<body>
+    <main>
+    <section>
+    <h1>Harjoitus 1</h1>
+    <p>Painikejärjestelmä</p>
+    <div class="napit">
+    <button class="primary">Nappula1</button>
+    <button class="secondary">Nappula2</button>
+    <button class="primary" disabled>Ei käytössä</button>
+    </div>
+    </section>
+
+    <section>
+    <h2>Harjoitus 2</h2>
+    <p>Lomakekortti</p>
+    <form>
+    <label for="nimi">Nimi:</label>
+    <input type="text" id="nimi" placeholder="Etunimi Sukunimi" required>
+
+    <label for="email">Sähköposti:</label>
+    <input type="email" id="email" placeholder="user@example.com" required>
+
+    <label for="salasana">Salasana:</label>
+    <input type="password" id="salasana" placeholder="Vähintään 8 merkkiä" required minlength="8">
+
+    <label for="confirm">Salasana uudelleen:</label>
+    <input type="password" id="confirm" placeholder="Vähintään 8 merkkiä" required minlength="8">
+
+    <label class="checkbox">
+    Hyväksyn ehdot:
+    <input type="checkbox" required>
+    </label>
+    
+    <button>Lähetä</button>
+    </form>
+        
+    </section>
+    </main>
+</body>
+</html>

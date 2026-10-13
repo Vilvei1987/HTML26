@@ -1,0 +1,142 @@
+:root {
+    --bg: rgb(27, 28, 43);
+    --text: lightgray;
+    --button-bg: #472fb5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+.napit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button {
+    color: var(--text);
+}
+
+.primary,
+.secondary {
+    padding: 1rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+    outline: 3px solid blue;
+    outline-offset: 2px;
+}
+
+.primary:focus,
+.secondary:focus {
+    outline: 3px solid blue;
+    outline-offset: 2px;
+}
+
+.primary {
+    background-color: var(--button-bg);
+    color: var(--text);
+    border: 3px solid var(--text);
+}
+
+.secondary {
+    background-color: transparent;
+    color: var(--text);
+    border: 2px solid var(--button-bg);
+}
+
+.primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.secondary:hover {
+    transform: scale(.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.primary:active {
+    transform: scale(.95);
+}
+
+.secondary:active {
+    transform: scale(1.05);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    opacity: 0.2;
+    transform: none;
+}
+
+form {
+    background-color: lightgray;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    gap: .75rem;
+    padding: 1rem;
+    margin: 15px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+form button {
+    background-color: var(--bg);
+    color: var(--text);
+    width: 25%;
+    align-self: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: var(--button-bg)
+}
+
+input {
+    background-color: lightgray;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+input:valid {
+    background-color: white;
+    
+}
+
+input:invalid:focus {
+    background-color: pink;
+}
+
+input:checked {
+    accent-color: hotpink;
+}
