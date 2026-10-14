@@ -49,11 +49,12 @@ nav a {
 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transform: skew(-9deg, -3deg);
-    transition: box-shadow 0.3s ease;
+    transition: 0.5s ease;
 }
 
 nav a:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+    transform: skew(-9deg, -3deg) scale(.95);
 }
 
 .ohje {
