@@ -17,28 +17,30 @@
             </ul>
         </nav>
         <h1>Oppiseikkailu</h1>
-        <form class="kirjautuminen">
-        <label for="nimi">Mikä sinun nimesi on?</label>
-        <input type="text" id="nimi" name="nimi" placeholder="Kirjoita nimesi">
-
-        <button type="submit">Aloita pelaaminen!</button>
-        </form>
-
-
     </header>
 <main>
  <h2>Tervetuloa pelaamaan!</h2>
- <p>Sivulla pääset oppimaan pelien avulla mm. värejä, kirjaimia ja numeroita.</p>
+ 
+    <p>Sivulla pääset oppimaan pelien avulla mm. värejä, kirjaimia ja numeroita.</p>
+    <p class="ohje">Klikkaa kuvaa pelataksesi</p>
 
  <section class="pelit">
-    <button class="varit">Värit</button>
-    <button class="numerot">Numerot</button>
-    <button class="kirjaimet">Kirjaimet</button>
+    <a href="kirjaimet.html">
+      <img src="kuvat/kirjaimet.png" alt="Aakkoset">
+    </a>
+
+    <a href="numerot.html">
+      <img src="kuvat/numerot.png" alt="Numerot">
+    </a>
+
+    <a href="varit.html">
+      <img src="kuvat/varit.png" alt="Värit">
+    </a>
  </section>
  
 </main>
 <footer>
-
+    <p>&copy; Ville Veijonen</p>
 </footer>
 </body>
 </html>
