@@ -1,0 +1,5 @@
+.kortti kaksi kertaa
+.korostus ja .kortti.korostus molemmat osuu samaan kohtaan.
+#kohdekortti voittaa .kortti
+inline tyyli voittaa css:n
+turhia/ei vielä lisättyjä classeja css:ssä
