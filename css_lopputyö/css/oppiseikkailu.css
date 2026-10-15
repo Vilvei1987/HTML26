@@ -95,3 +95,100 @@ footer {
     color: var(--text);
     margin-top: 3.5rem;
 }
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        gap: 0.7rem;
+    }
+
+    nav a {
+        width: 90px;
+        height: 40px;
+        padding: 0.3rem;
+        font-size: 1rem;
+    }
+
+    .pelit {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+
+    body {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        gap: 0.7rem;
+        padding: 0.7rem;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        width: 110px;
+        height: 45px;
+        padding: 0.4rem;
+    }
+
+    .pelit {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    img {
+        width: min(18rem, 40vw);
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 1.1rem;
+    }
+
+    h1, h2, p {
+        margin: 1rem;
+    }
+
+    nav ul {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    nav a {
+        width: 90px;
+        height: 40px;
+        padding: 0.3rem;
+        font-size: 0.9rem;
+    }
+
+    .pelit {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    img {
+        width: min(18rem, 75vw);
+    }
+
+    .ohje {
+        max-width: 80%;
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 2rem;
+    }
+}
