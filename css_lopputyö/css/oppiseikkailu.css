@@ -1,7 +1,6 @@
 :root {
-    --bg: rgb(110, 236, 110);
-    --text: rgba(82, 16, 11, 0.677);
-    --border: rgb(41, 53, 43);
+    --text: rgba(22, 5, 65, 0.677);
+    --border: rgb(50, 66, 53);
 }
 
 body {
@@ -78,8 +77,8 @@ nav a:hover {
 }
 
 img {
-    width: 20rem;
-    height: 20rem;
+    width: 19rem;
+    height: 19rem;
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     transition: 0.3s;
@@ -190,5 +189,16 @@ footer {
 
     footer {
         margin-top: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
