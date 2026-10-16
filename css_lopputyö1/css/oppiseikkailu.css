@@ -260,6 +260,7 @@ footer {
 @media (max-width: 600px) {
     body {
         font-size: 1.1rem;
+        color: var(--text);
     }
 
     h1, h2, p {
