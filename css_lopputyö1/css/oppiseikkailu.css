@@ -1,18 +1,15 @@
+/* ==========================================
+   1. Muuttujat ja perustyylit
+   ================================---------- */
 :root {
     --text: rgba(22, 5, 65, 0.677);
     --border: rgb(50, 66, 53);
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-}
-
-html {
-    min-height: 100%;
-    background-image: url('../kuvat/taustakuva.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 body {
@@ -42,6 +39,9 @@ a:visited {
     text-decoration: line-through;
 }
 
+/* ==========================================
+   2. Navigaatio
+   ================================---------- */
 nav ul {
     display: flex;
     gap: 1rem;
@@ -54,15 +54,12 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-
     width: 120px;
     height: 50px;
     color: var(--text);
     text-decoration: none;
     border-radius: 1rem;
     padding: 0.5rem;
-
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transform: skew(-9deg, -3deg);
     transition: 0.5s ease;
@@ -70,21 +67,21 @@ nav a {
 
 nav a:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-    transform: skew(-9deg, -3deg) scale(.95);
+    transform: skew(-9deg, -3deg) scale(0.95);
 }
 
+/* ==========================================
+   3. Komponentit (.ohje, .pelit, img, jne.)
+   ================================---------- */
 .ohje {
     display: table;
     margin: 0 auto;
     font-weight: 600;
-    
     border-radius: 1rem;
     padding: 0.5rem 1rem;
-    box-shadow:  0 4px 12px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     transform: skew(-9deg);
 }
-
-
 
 .pelit {
     display: flex;
@@ -95,17 +92,38 @@ nav a:hover {
 
 img {
     width: 19rem;
-    height: 19rem;
     max-width: 100%;
     height: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     transition: 0.3s;
-
+    object-fit: cover;
 }
 
 .pelit img:hover {
     transform: scale(1.04);
+}
+
+.esittely {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.esittely img {
+    width: 19rem;
+    height: 19rem;
+    border-radius: 50%;
+}
+
+.kuvaus {
+    max-width: 500px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 footer {
@@ -114,9 +132,105 @@ footer {
     margin-top: 3.5rem;
 }
 
+/* ==========================================
+   4. Lomake
+   ================================---------- */
+.lomake {
+    width: calc(100% - 2rem);
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
 
+.lomake form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.lomake input:not([type="checkbox"]),
+.lomake textarea,
+.lomake select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font: inherit;
+    background-color: rgba(234, 255, 234, 0.5);
+    color: var(--text);
+}
+
+.lomake input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0;
+    accent-color: green;
+}
+
+.lomake input:focus,
+.lomake textarea:focus,
+.lomake select:focus {
+    background-color: rgba(234, 255, 234, 1);
+    outline: 2px solid var(--border);
+}
+
+.lomake button {
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    max-width: 50%;
+    align-self: center;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font: inherit;
+    background-color: rgba(234, 255, 234, 0.5);
+}
+
+.lomake button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   5. Animaatiot (.tulossa)
+   ================================---------- */
+.tulossa span {
+    animation: piste 2.2s steps(1, end) infinite;
+    opacity: 0;
+}
+
+.tulossa span:nth-child(1) {
+    animation-name: piste1;
+}
+
+.tulossa span:nth-child(2) {
+    animation-name: piste2;
+}
+
+.tulossa span:nth-child(3) {
+    animation-name: piste3;
+}
+
+@keyframes piste1 {
+    0%   { opacity: 0; }
+    25%  { opacity: 1; }
+}
+
+@keyframes piste2 {
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+}
+
+@keyframes piste3 {
+    0%   { opacity: 0; }
+    75%  { opacity: 1; }
+}
+
+/* ==========================================
+   6. Media-kyselyt (Responsiivisuus)
+   ================================---------- */
 @media (max-width: 900px) {
-
     body {
         font-size: 1.3rem;
     }
@@ -140,9 +254,6 @@ footer {
 
     img {
         width: min(18rem, 40vw);
-        height: auto;
-        aspect-ratio: 1;
-        object-fit: cover;
     }
 }
 
@@ -193,160 +304,6 @@ footer {
 
     .esittely {
         flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-
-    .esittely img {
-        width: min(19rem, 75vw);
-        height: auto;
-        aspect-ratio: 1;
-    }
-
-    .kuvaus {
-        max-width: 100%;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms;
-        animation-iteration-count: 1;
-        transition-duration: 0.01ms;
-        scroll-behavior: auto;
-    }
-}
-
-.tulossa span {
-    animation: piste 2.2s steps(1, end) infinite;
-    opacity: 0;
-}
-
-.tulossa span:nth-child(1) {
-    animation-name: piste1;
-}
-
-.tulossa span:nth-child(2) {
-    animation-name: piste2;
-}
-
-.tulossa span:nth-child(3) {
-    animation-name: piste3;
-}
-
-@keyframes piste1 {
-    0%   { opacity: 0; }
-    25%  { opacity: 1; }
-}
-
-@keyframes piste2 {
-    0%   { opacity: 0; }
-    50%  { opacity: 1; }
-}
-
-@keyframes piste3 {
-    0%   { opacity: 0; }
-    75%  { opacity: 1; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .tulossa span {
-        animation: none;
-        opacity: 1;
-    }
-}
-
-.esittely {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 2rem auto;
-}
-
-.esittely img {
-    width: 19rem;
-    height: 19rem;
-}
-
-.kuvaus {
-    max-width: 500px;
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    
-}
-
-.lomake {
-    box-sizing: border-box;
-    width: calc(100% - 2rem);
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-.lomake form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-}
-
-.lomake input:not([type="checkbox"]),
-.lomake textarea,
-.lomake select {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0.7rem;
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    font: inherit;
-    background-color: rgba(234, 255, 234, 0.5);
-    color: var(--text);
-}
-
-.lomake input[type="checkbox"] {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin: 0;
-    accent-color: green;
-    
-}
-
-.lomake input:focus,
-.lomake textarea:focus,
-.lomake select:focus {
-    background-color: rgba(234, 255, 234);
-    outline: 2px solid var(--border);
-}
-
-.lomake button {
-    padding: 0.7rem;
-    margin-top: 0.5rem;
-    max-width: 50%;
-    align-self: center;
-    border:  1px solid var(--border);
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font: inherit;
-    background-color: rgba(234, 255, 234, 0.5);
-}
-
-.lomake button:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 600px) {
-    .lomake {
-        padding: 1rem;
-        margin: 1.5rem auto;
-    }
-
-    .esittely {
-        flex-direction: column;
         gap: 0.75rem;
         padding: 0 1rem;
     }
@@ -359,5 +316,21 @@ footer {
 
     .kuvaus {
         max-width: 90%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
+    }
+
+    .tulossa span {
+        animation: none;
+        opacity: 1;
     }
 }
