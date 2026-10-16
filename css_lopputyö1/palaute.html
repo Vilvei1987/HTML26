@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palaute</title>
+    <link rel="stylesheet" href="css/oppiseikkailu.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="varit.html">Värit</a></li>
+                <li><a href="numerot.html">Numerot</a></li>
+                <li><a href="kirjaimet.html">Kirjaimet</a></li>
+                <li><a href="palaute.html">Palaute</a></li>
+            </ul>
+        </nav>  
+    </header>
+<main>
+    <h1>Palaute</h1>
+    <p>Palautteesi on tärkeää jatkuvaa kehittymistä varten.</p>
+
+<section class="lomake">
+    <form>
+        <label for="nimi">Nimi</label>
+        <input type="text" id="nimi" name="nimi" 
+                placeholder="Etunimi Sukunimi"
+                pattern="[A-Za-zÅÄÖåäö ]+"
+                title="Kirjoita nimi käyttäen vain kirjaimia." required>
+
+        <label for="sahkoposti">Sähköposti</label>
+        <input type="email" id="sahkoposti" name="sahkoposti"
+                placeholder="esimerkki@esimerkki.fi" required>
+
+        <label for="aihe">Palautteen aihe</label>
+        <select id="aihe" name="aihe" required>
+            <option value="">Valitse aihe</option>
+            <option value="kirjaimet">Kirjaimet</option>
+            <option value="numerot">Numerot</option>
+            <option value="varit">Värit</option>
+            <option value="sivusto">Sivusto</option>
+            <option value="muu">Muu</option>
+        </select>
+
+        <label for="palaute">Palaute</label>
+        <textarea id="palaute" name="palaute" rows="5" placeholder="Kirjoita tähän..." required></textarea>
+
+        <input type="checkbox" id="uutiskirje" name="uutiskirje">
+        <label for="uutiskirje">Haluan tilata uutiskirjeen</label>
+
+        <button type="submit">Lähetä palaute</button>
+    </form>
+</section>
+</main>
+
+<footer>
+    <p>&copy; Ville Veijonen</p>
+</footer>
+</body>
+</html>

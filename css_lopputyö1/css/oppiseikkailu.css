@@ -21,6 +21,10 @@ h1, h2, p {
     margin: 1.5rem;
 }
 
+#huom {
+    text-decoration: underline;
+}
+
 a:visited {
     color: var(--text);
 }
@@ -86,7 +90,7 @@ img {
 }
 
 .pelit img:hover {
-    transform: scale(.98);
+    transform: scale(1.04);
 }
 
 footer {
@@ -196,9 +200,127 @@ footer {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
     }
+}
+
+.tulossa span {
+    animation: piste 2.2s steps(1, end) infinite;
+    opacity: 0;
+}
+
+.tulossa span:nth-child(1) {
+    animation-name: piste1;
+}
+
+.tulossa span:nth-child(2) {
+    animation-name: piste2;
+}
+
+.tulossa span:nth-child(3) {
+    animation-name: piste3;
+}
+
+@keyframes piste1 {
+    0%   { opacity: 0; }
+    25%  { opacity: 1; }
+}
+
+@keyframes piste2 {
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+}
+
+@keyframes piste3 {
+    0%   { opacity: 0; }
+    75%  { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tulossa span {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+.esittely {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.esittely img {
+    width: 19rem;
+    height: 19rem;
+}
+
+.kuvaus {
+    max-width: 500px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    
+}
+
+.lomake {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.lomake form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.lomake input:not([type="checkbox"]),
+.lomake textarea,
+.lomake select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font: inherit;
+    background-color: rgba(234, 255, 234, 0.5);
+    color: var(--text);
+}
+
+.lomake input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0;
+    accent-color: green;
+    
+}
+
+.lomake input:focus,
+.lomake textarea:focus,
+.lomake select:focus {
+    background-color: rgba(234, 255, 234);
+    outline: 2px solid var(--border);
+}
+
+.lomake button {
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    max-width: 50%;
+    align-self: center;
+    border:  1px solid var(--border);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font: inherit;
+    background-color: rgba(234, 255, 234, 0.5);
+}
+
+.lomake button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
