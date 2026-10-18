@@ -92,17 +92,16 @@
 
     /* Yleiset komponentit */
     .ohje {
-        display: flex;
-        justify-content: center;   /* Keskeittää sisällön vaakaan */
-        align-items: center;       /* Keskeittää sisällön pystyyn */
-        margin: 0 auto;
-        font-weight: 600;
-        border-radius: 1rem;
-        padding: 0.5rem 1rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-        transform: skew(-9deg);
-        text-align: center;        /* Varmistaa tekstin keskityksen */
-    }
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    transform: skew(-9deg);
+}
 
     .pelit {
         display: flex;
