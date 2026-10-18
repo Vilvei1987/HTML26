@@ -1,359 +1,370 @@
 /* ==========================================
-   1. Muuttujat ja perustyylit
-   ================================---------- */
-:root {
-    --text: rgba(22, 5, 65, 0.677);
-    --border: rgb(50, 66, 53);
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html {
-    min-height: 100vh;
-    background-image: url('../kuvat/taustakuva.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* Estää valkoiset palkit lovellisissa puhelimissa vaakatilassa */
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-}
-
-body {
-    font-size: 1.5rem;
-    color: var(--text);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    min-height: 100vh;
-    margin: 0;
-    /* Tausta on html-elementissä, joten body voi olla läpinäkyvä */
-    background: transparent;
-    overflow-x: hidden; /* Estää vaakaskrollauksen */
-}
-
-h1, h2, p {
-    text-align: center;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    margin: 1.5rem;
-}
-
-#huom {
-    text-decoration: underline;
-}
-
-a:visited {
-    color: black;
-    text-decoration: line-through;
-}
+   1. CSS-kerrosten (Layers) määrittely
+   ========================================== */
+@layer reset, base, components, animations, responsive;
 
 /* ==========================================
-   2. Navigaatio
-   ================================---------- */
-nav ul {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
+   2. Reset ja Perustyylit
+   ========================================== */
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 }
 
-nav a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 50px;
-    color: var(--text);
-    text-decoration: none;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    transform: skew(-9deg, -3deg);
-    transition: 0.5s ease;
-}
-
-nav a:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-    transform: skew(-9deg, -3deg) scale(0.95);
-}
-
-/* ==========================================
-   3. Komponentit (.ohje, .pelit, img, jne.)
-   ================================---------- */
-.ohje {
-    display: table;
-    margin: 0 auto;
-    font-weight: 600;
-    border-radius: 1rem;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-    transform: skew(-9deg);
-}
-
-.pelit {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 2rem;
-    padding: 0 1.5rem; /* Lisätty turvamarginaali sivuille */
-}
-
-img {
-    width: 19rem;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-    transition: 0.3s;
-    object-fit: cover;
-}
-
-.pelit img:hover {
-    transform: scale(1.04);
-}
-
-.esittely {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1.5rem; /* Korjaa reunoihin kiinni menemisen tabletilla */
-}
-
-.esittely img {
-    width: 19rem;
-    height: 19rem;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.kuvaus {
-    max-width: 500px;
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-footer {
-    text-align: center;
-    color: var(--text);
-    margin-top: 3.5rem;
-    padding: 1rem;
-}
-
-/* ==========================================
-   4. Lomake
-   ================================---------- */
-.lomake {
-    width: min(500px, calc(100% - 3rem));
-    margin: 2rem auto;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-.lomake form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-}
-
-.lomake input:not([type="checkbox"]),
-.lomake textarea,
-.lomake select {
-    width: 100%;
-    padding: 0.7rem;
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    font: inherit;
-    background-color: rgba(234, 255, 234, 0.5);
-    color: var(--text);
-}
-
-.lomake input[type="checkbox"] {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin: 0;
-    accent-color: green;
-}
-
-.lomake input:focus,
-.lomake textarea:focus,
-.lomake select:focus {
-    background-color: rgba(234, 255, 234, 1);
-    outline: 2px solid var(--border);
-}
-
-.lomake button {
-    padding: 0.7rem;
-    margin-top: 0.5rem;
-    max-width: 50%;
-    align-self: center;
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font: inherit;
-    background-color: rgba(234, 255, 234, 0.5);
-}
-
-.lomake button:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* ==========================================
-   5. Animaatiot (.tulossa)
-   ================================---------- */
-.tulossa span {
-    animation: piste 2.2s steps(1, end) infinite;
-    opacity: 0;
-}
-
-.tulossa span:nth-child(1) {
-    animation-name: piste1;
-}
-
-.tulossa span:nth-child(2) {
-    animation-name: piste2;
-}
-
-.tulossa span:nth-child(3) {
-    animation-name: piste3;
-}
-
-@keyframes piste1 {
-    0%   { opacity: 0; }
-    25%  { opacity: 1; }
-}
-
-@keyframes piste2 {
-    0%   { opacity: 0; }
-    50%  { opacity: 1; }
-}
-
-@keyframes piste3 {
-    0%   { opacity: 0; }
-    75%  { opacity: 1; }
-}
-
-/* ==========================================
-   6. Media-kyselyt (Responsiivisuus)
-   ================================---------- */
-@media (max-width: 900px) {
-    body {
-        font-size: 1.3rem;
+@layer base {
+    :root {
+        --text: #160541;
+        --border: rgb(50, 66, 53);
     }
 
+    html {
+        min-height: 100vh;
+        background-image: url('../kuvat/taustakuva.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        /* Estää valkoiset palkit lovellisissa puhelimissa vaakatilassa */
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    body {
+        font-size: 1.5rem;
+        color: var(--text);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        background: transparent;
+        overflow-x: hidden;
+    }
+
+    h1, h2, p {
+        text-align: center;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        margin: 1.5rem;
+    }
+
+    #huom {
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: black;
+        text-decoration: line-through;
+    }
+}
+
+/* ==========================================
+   3. Komponentit (.nav, .ohje, .pelit, .lomake)
+   ========================================== */
+@layer components {
+    /* Navigaatio */
     nav ul {
-        gap: 0.7rem;
-        padding: 0.7rem;
-        flex-wrap: wrap;
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
     }
 
     nav a {
-        width: 110px;
-        height: 45px;
-        padding: 0.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 50px;
+        color: var(--text);
+        text-decoration: none;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transform: skew(-9deg, -3deg);
+        transition: 0.5s ease;
+    }
+
+    nav a:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+        transform: skew(-9deg, -3deg) scale(0.95);
+    }
+
+    /* Yleiset komponentit */
+    .ohje {
+        display: table;
+        margin: 0 auto;
+        font-weight: 600;
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        transform: skew(-9deg);
     }
 
     .pelit {
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .esittely {
-        gap: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
         padding: 0 1.5rem;
     }
 
     img {
-        width: min(18rem, 40vw);
-    }
-}
-
-@media (max-width: 600px) {
-    body {
-        font-size: 1.1rem;
-    }
-
-    h1, h2, p {
-        margin: 1rem;
+        width: 19rem;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        transition: 0.3s;
+        object-fit: cover;
     }
 
-    nav ul {
-        gap: 0.5rem;
-        padding: 0.5rem;
-    }
-
-    nav a {
-        width: 90px;
-        height: 40px;
-        padding: 0.3rem;
-        font-size: 0.9rem;
-    }
-
-    .pelit {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    img {
-        width: min(18rem, 75vw);
-    }
-
-    .ohje {
-        max-width: 80%;
-        text-align: center;
-    }
-
-    footer {
-        margin-top: 2rem;
-    }
-
-    .lomake {
-        padding: 1rem;
-    }
-
-    .lomake button {
-        color: white;
+    .pelit img:hover {
+        transform: scale(1.04);
     }
 
     .esittely {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
     }
 
     .esittely img {
-        width: min(19rem, 75vw);
-        height: auto;
-        margin: 0;
+        width: 19rem;
+        height: 19rem;
+        border-radius: 50%;
+        flex-shrink: 0;
     }
 
     .kuvaus {
-        max-width: 100%;
+        max-width: 500px;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+        text-align: center;
+        color: var(--text);
+        margin-top: 3.5rem;
+        padding: 1rem;
+    }
+
+    /* Lomake */
+    .lomake {
+        width: min(500px, calc(100% - 3rem));
+        margin: 2rem auto;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .lomake form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    .lomake input:not([type="checkbox"]),
+    .lomake textarea,
+    .lomake select {
+        width: 100%;
+        padding: 0.7rem;
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+        font: inherit;
+        background-color: rgba(234, 255, 234, 0.5);
+        color: var(--text);
+    }
+
+    .lomake input[type="checkbox"] {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0;
+        accent-color: green;
+    }
+
+    .lomake input:focus,
+    .lomake textarea:focus,
+    .lomake select:focus {
+        background-color: rgba(234, 255, 234, 1);
+        outline: 2px solid var(--border);
+    }
+
+    /* Painikkeen tyylit (Kaikilla laitteilla sama: teksti MUSTA) */
+    .lomake button {
+        -webkit-appearance: none; /* Estää mobiiliselaimia muuttamasta ulkoasua/tekstiväriä */
+        appearance: none;
+        padding: 0.7rem;
+        margin-top: 0.5rem;
+        max-width: 50%;
+        align-self: center;
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font: inherit;
+        background-color: rgba(234, 255, 234, 0.5);
+        color: black; /* Tekstiväri on aina musta */
+    }
+
+    .lomake button:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Saavutettavuus: Selkeä rajaviiva näppäimistöllä navigoitaessa (Focus) */
+    nav a:focus-visible,
+    .lomake button:focus-visible {
+        outline: 3px solid var(--border);
+        outline-offset: 3px;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms;
-        animation-iteration-count: 1;
-        transition-duration: 0.01ms;
-        scroll-behavior: auto;
+/* ==========================================
+   4. Animaatiot (.tulossa)
+   ========================================== */
+@layer animations {
+    .tulossa span {
+        animation: piste 2.2s steps(1, end) infinite;
+        opacity: 0;
     }
 
-    .tulossa span {
-        animation: none;
-        opacity: 1;
+    .tulossa span:nth-child(1) { animation-name: piste1; }
+    .tulossa span:nth-child(2) { animation-name: piste2; }
+    .tulossa span:nth-child(3) { animation-name: piste3; }
+
+    @keyframes piste1 {
+        0%   { opacity: 0; }
+        25%  { opacity: 1; }
+    }
+
+    @keyframes piste2 {
+        0%   { opacity: 0; }
+        50%  { opacity: 1; }
+    }
+
+    @keyframes piste3 {
+        0%   { opacity: 0; }
+        75%  { opacity: 1; }
+    }
+}
+
+/* ==========================================
+   5. Media-kyselyt (Responsiivisuus & Saavutettavuus)
+   ========================================== */
+@layer responsive {
+    @media (max-width: 900px) {
+        body {
+            font-size: 1.3rem;
+        }
+
+        nav ul {
+            gap: 0.7rem;
+            padding: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            width: 110px;
+            height: 45px;
+            padding: 0.4rem;
+        }
+
+        .pelit {
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .esittely {
+            gap: 1.5rem;
+            padding: 0 1.5rem;
+        }
+
+        img {
+            width: min(18rem, 40vw);
+        }
+    }
+
+    @media (max-width: 600px) {
+        body {
+            font-size: 1.1rem;
+        }
+
+        h1, h2, p {
+            margin: 1rem;
+        }
+
+        nav ul {
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        nav a {
+            width: 90px;
+            height: 40px;
+            padding: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .pelit {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        img {
+            width: min(18rem, 75vw);
+        }
+
+        .ohje {
+            max-width: 80%;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 2rem;
+        }
+
+        .lomake {
+            padding: 1rem;
+        }
+
+        .esittely {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+
+        .esittely img {
+            width: min(19rem, 75vw);
+            height: auto;
+            margin: 0;
+        }
+
+        .kuvaus {
+            max-width: 100%;
+        }
+    }
+
+    /* Saavutettavuus: Animaatioiden vähentäminen */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms;
+            animation-iteration-count: 1;
+            transition-duration: 0.01ms;
+            scroll-behavior: auto;
+        }
+
+        .tulossa span {
+            animation: none;
+            opacity: 1;
+        }
     }
 }
