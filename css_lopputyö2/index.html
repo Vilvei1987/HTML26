@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KotiHubi kokoaa perheen kalenterin, ostoslistan ja tehtävät yhteen paikkaan.">
+    <meta name="author" content="Ville Veijonen">
+    <meta name="theme-color" content="#282f41">
+    <title>KotiHubi</title>
+    <link rel="stylesheet" href="css/appi.css">
+    <script src="js/appi.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>KotiHubi</h1>
+    </header>
+
+    <aside>
+        <section class="saa kortti" aria-labelledby="saaOtsikko">
+            <h2 id="saaOtsikko"></h2>
+            <div class="saa-sisalto">
+                <a
+                    class="weatherwidget-io"
+                    href="https://forecast7.com/en/60d2124d66/espoo/"
+                    data-label_1="ESPOO"
+                    data-label_2=""
+                    data-font="sans-serif"
+                    data-mode="Current"
+                    data-theme="pure"
+                    data-basecolor="rgb(40, 47, 65)"
+                    data-textcolor="lightgray"
+                    data-highcolor="lightgray"
+                    data-lowcolor="lightgray"
+                    data-cloudcolor="#8f98a8"
+                    data-raincolor="#238b5a"
+                    data-snowcolor="#e6e9ef"
+                    data-suncolor="yellow">
+                    ESPOO SÄÄ
+                </a>
+            </div>
+        </section>
+    </aside>
+
+    <main>
+        <section class="kalenteri kortti" aria-labelledby="kalenteriOtsikko">
+            <div class="kalenteri-otsikko">
+                <h2 id="kalenteriOtsikko">Kalenteri</h2>
+                <p id="kello" aria-label="Nykyinen kellonaika"></p>
+            </div>
+
+            <div class="kalenteri-ylapalkki">
+                <button
+                    type="button"
+                    id="edellinenKuukausi"
+                    class="kalenteri-nappi"
+                    aria-label="Edellinen kuukausi">
+                    ‹
+                </button>
+
+                <h3 id="kuukausiVuosi"></h3>
+
+                <button
+                    type="button"
+                    id="seuraavaKuukausi"
+                    class="kalenteri-nappi"
+                    aria-label="Seuraava kuukausi"
+                >
+                    ›
+                </button>
+            </div>
+
+            <div
+                class="kalenteri-ruudukko"
+                id="kalenteriRuudukko"
+                aria-label="Kalenterin päivät"
+            ></div>
+
+            <form id="tapahtumaLomake">
+                <h3 id="valittuPaiva">Valitse päivä kalenterista</h3>
+
+                <label for="tapahtuma">Merkintä:</label>
+
+            <textarea
+                id="tapahtuma"
+                name="tapahtuma"
+                placeholder="Kirjoita merkintä"
+                required></textarea>
+
+                <button id="nappula" type="submit">Lisää</button>
+            </form>
+
+            <dialog
+                id="paivaDialogi" aria-labelledby="paivaDialogiOtsikko">
+                <h2 id="paivaDialogiOtsikko"></h2>
+                <ul id="paivanTapahtumaLista"></ul>
+                <button type="button" id="suljePaivaDialogi">Sulje</button>
+            </dialog>
+        </section>
+
+        <section class="ostokset kortti" aria-labelledby="ostosOtsikko">
+            <h2 id="ostosOtsikko"><span aria-hidden="true">🛒</span> Ostoslista</h2>
+            
+
+            <form id="ostosLomake">
+                <input
+                    type="text"
+                    id="ostos"
+                    name="ostos"
+                    placeholder="Kirjoita tuote"
+                    required>
+
+                <button type="submit">Lisää</button>
+            </form>
+
+            <ul id="ostosLista"></ul>
+        </section>
+
+        <section class="tehtavat kortti" aria-labelledby="tehtavaOtsikko">
+            <h2 id="tehtavaOtsikko"><span aria-hidden="true">☑️</span> Tehtävät</h2>
+            
+            <form id="tehtavaLomake">
+            <textarea
+                id="tehtava"
+                name="tehtava"
+                placeholder="Kirjoita tehtävä"
+                required></textarea>
+        <button type="submit">Lisää</button>
+            </form>
+
+            <ul id="tehtavaLista"></ul>
+        </section>
+    </main>
+</body>
+</html>

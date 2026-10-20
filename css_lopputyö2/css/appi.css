@@ -1,0 +1,432 @@
+:root {
+    --bg: rgb(40, 47, 65);
+    --text: white;
+    --surface: #1e2330;
+    --surface-hover: #354158;
+    --border: #2c3342;
+    --accent: #238b5a;
+    --text-muted: #8f98a8;
+    --event-color: #82c89e;
+
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    --small-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Perusrakenne */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 13rem minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 1.1rem;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+header {
+    grid-column: 1 / -1;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+aside {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+    margin: 0.75rem;
+}
+
+main {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    align-content: start;
+    gap: 0.5rem 0.5rem;
+    padding: 1rem;
+}
+
+/* Linkit ja listat */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--text);
+}
+
+h2 span {
+    margin-right: 0.3rem;
+}
+
+/* Yhteiset korttityylit */
+.kortti {
+    min-width: 0;
+    padding: 1rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.kortti h2 {
+    margin-top: 0;
+    color: #e6e9ef;
+}
+
+/* Sää */
+.saa {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.saa-sisalto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.saa .weatherwidget-io {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+/* Kalenteri ja kellonaika */
+.kalenteri {
+    grid-column: 1 / -1;
+}
+
+.kalenteri-otsikko {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.kalenteri-otsikko h2,
+#kello {
+    margin: 0;
+    color: #e6e9ef;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.kalenteri-ylapalkki {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.kalenteri-ylapalkki h3 {
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.kalenteri-ruudukko {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.35rem;
+}
+
+.kalenteri-paiva {
+    min-width: 0;
+    min-height: 3rem;
+    padding: 0.5rem 0.2rem;
+    text-align: center;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+}
+
+.kalenteri-paiva:hover {
+    background-color: var(--surface-hover);
+}
+
+.kalenteri-paiva.valittu {
+    outline: 2px solid var(--accent);
+}
+
+.kalenteri-paiva:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.kalenteri-viikonpaiva {
+    padding: 0.4rem 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.kalenteri-tyhja {
+    min-height: 3rem;
+}
+
+.kalenteri-tanaan {
+    background-color: var(--accent);
+    color: var(--text);
+    border: 2px solid #8fdbad;
+    border-radius: 0.4rem;
+    font-weight: bold;
+}
+
+.kalenteri-tapahtuma {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.7rem;
+    color: var(--event-color);
+    overflow-wrap: anywhere;
+}
+
+dialog {
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px solid rgba(226, 219, 219);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(226, 219, 219, 0.2);
+    min-width: 60%;
+    max-width: 90%;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#paivanTapahtumaLista li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#paivanTapahtumaLista button {
+    margin-left: 1rem;
+}
+
+/* Lomakkeet */
+#ostosLomake,
+#tehtavaLomake,
+#tapahtumaLomake {
+    display: grid;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    max-width: 100%;
+}
+
+/* Kalenterin otsikko ja kentän nimi omille riveilleen */
+#tapahtumaLomake h3,
+#tapahtumaLomake label {
+    width: 100%;
+}
+
+#tapahtumaLomake h3 {
+    margin: 0 0 0.3rem;
+}
+
+#ostosLomake input,
+#tehtavaLomake textarea {
+    min-width: 0;
+    width: 15rem;
+    height: 2.5rem;
+}
+
+#tapahtumaLomake textarea {
+    min-width: 0;
+    width: 35rem;
+    height: 2.5rem;
+}
+
+/* Lomakkeiden painikkeet */
+#ostosLomake button,
+#tehtavaLomake button,
+#tapahtumaLomake button {
+    width: 5.5rem;
+    height: 2.5rem;
+    padding: 0.1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Ostoslista ja tehtävät */
+.ostokset,
+.tehtavat {
+    min-width: 0;
+    min-height: 16rem;
+}
+
+/* Painikkeet */
+button {
+    padding: 0.3rem;
+    color: var(--text);
+    background-color: var(--bg);
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    box-shadow: var(--small-shadow);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--surface-hover);
+    transform: scale(1.03);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.kalenteri-nappi {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Syöttökentät */
+input, textarea {
+    max-width: 100%;
+    padding: 0.5rem;
+    color: var(--text);
+    font: inherit;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--small-shadow);
+}
+
+textarea {
+    resize: none;
+    overflow-y: hidden;
+    min-height: 2.5rem;
+}
+
+/* Tabletit */
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    aside {
+        grid-column: 1;
+        grid-row: 2;
+        margin: 0.75rem 1rem;
+    }
+
+    main {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .saa {
+        max-width: 100%;
+    }
+}
+
+/* Puhelimet */
+@media (max-width: 600px) {
+    header {
+        padding: 1rem;
+    }
+
+    aside {
+        margin: 0.5rem 0.75rem;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .kalenteri {
+        grid-column: auto;
+    }
+
+    .kalenteri-otsikko {
+        align-items: flex-start;
+    }
+
+    .kalenteri-ruudukko {
+        gap: 0.2rem;
+    }
+
+    .kalenteri-paiva {
+        min-height: 2.5rem;
+        padding: 0.3rem 0.1rem;
+        font-size: 0.9rem;
+    }
+
+    .kalenteri-tyhja {
+        min-height: 2.5rem;
+    }
+
+    #ostosLomake input,
+    #tehtavaLomake input,
+    #tapahtumaLomake input {
+        flex-basis: 8rem;
+    }
+}
+
+/* Ostoslistan ja tehtävien checkboxit */
+#ostosLista input[type="checkbox"],
+#tehtavaLista input[type="checkbox"] {
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#ostosLista input[type="checkbox"]:checked,
+#tehtavaLista input[type="checkbox"]:checked {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    position: relative;
+}
+
+#ostosLista input[type="checkbox"]:checked::after,
+#tehtavaLista input[type="checkbox"]:checked::after {
+    content: "✔";
+    color: var(--text);
+    font-size: 1rem;
+    position: absolute;
+    top: -2px;
+    left: 2px;
+}
