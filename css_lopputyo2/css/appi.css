@@ -19,7 +19,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 20rem minmax(0, 1fr);
+    grid-template-columns: 18rem minmax(0, 1fr);
     grid-template-rows: auto 1fr;
     min-height: 100vh;
     margin: 0;
@@ -31,12 +31,34 @@ body {
 
 header {
     grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    gap: 1rem;
     padding: 1rem 1.5rem;
-    text-align: center;
 }
 
+
 header h1 {
-    margin: 0;
+    font-size: 1.7rem;
+}
+
+header a {
+    justify-self: end;
+    margin-left: 0;
+    display: inline-block;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: var(--small-shadow);
+    transition: 0.2s;
+}
+
+header a:hover {
+    background-color: var(--surface-hover);
+    cursor: pointer;
+    transform: scale(1.03);
 }
 
 aside {
@@ -83,12 +105,12 @@ h2 span {
     background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: 1rem;
-    box-shadow: var(--shadow);
+    box-shadow: var(--small-shadow);
 }
 
 .kortti h2 {
     margin-top: 0;
-    color: #e6e9ef;
+    color: var(--text);
 }
 
 /* Sää */
@@ -97,9 +119,10 @@ h2 span {
     min-width: 0;
     padding: 0;
     background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+}
+
+.saa a:hover {
+    transform: none;
 }
 
 .saa-sisalto {
@@ -220,7 +243,7 @@ dialog {
 }
 
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #paivanTapahtumaLista li {
@@ -263,8 +286,8 @@ dialog::backdrop {
 }
 
 #tapahtumaLomake textarea {
-    width: 80%;
-    max-width: 80%;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
     height: 2.5rem;
 }
@@ -472,17 +495,37 @@ textarea {
 .ajastin {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 0.75rem;
     padding: 1rem;
     background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: 1rem;
-    box-shadow: var(--shadow);
+    box-shadow: var(--small-shadow);
 }
 
 .ajastin h2 {
     margin: 0;
     text-align: center;
+}
+
+.ajastin-valinnat {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.ajastin-kentta {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    gap: 0.4rem;
+}
+
+.ajastin-kentta input {
+    width: 100%;
+    min-width: 0;
 }
 
 #ajastinnaytto {
@@ -498,19 +541,16 @@ textarea {
     font-variant-numeric: tabular-nums;
 }
 
-#ajastinaika {
-    width: 100%;
-    min-width: 0;
-}
-
 .ajastin button {
     padding: 0.6rem 1rem;
     border: 1px solid var(--border);
     border-radius: 0.5rem;
     background-color: var(--bg);
+    align-self: stretch;
     color: var(--text-light);
     box-shadow: var(--shadow);
     font: inherit;
+    font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s;
     
@@ -530,5 +570,40 @@ textarea {
 @media (prefers-reduced-motion: reduce) {
     .ajastin button {
         transition: none;
+    }
+}
+
+#suljeAjastinIlmoitus {
+    display: block;
+    border: 1px solid var(--border);
+    margin: 0 auto;
+    font-size: 1.2rem;
+    
+}
+
+#suljeAjastinIlmoitus:hover {
+    background-color: var(--surface-hover);
+    transform: scale(1.03);
+}
+
+#ajastinIlmoitus h1 {
+    text-align: center;
+}
+
+#ajastinIlmoitus p {
+    font-size: 1.8rem;
+    text-align: center;
+    animation: ilmoitusVari 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes ilmoitusVari {
+    from {
+        color: white;
+        transform: scale(.97);
+    }
+
+    to {
+        color: red;
+        transform: scale(1.03);
     }
 }

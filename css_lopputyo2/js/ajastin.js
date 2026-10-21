@@ -1,5 +1,10 @@
+const ajastinIlmoitus = document.querySelector("#ajastinIlmoitus");
+const suljeAjastinIlmoitus = document.querySelector("#suljeAjastinIlmoitus");
+const ilmoitusAani = new Audio("aanet/alarm.wav");
+
 const ajastinNaytto = document.querySelector("#ajastinnaytto");
-const ajastinAika = document.querySelector("#ajastinaika");
+const ajastinMinuutit = document.querySelector("#ajastinMinuutit");
+const ajastinSekunnit = document.querySelector("#ajastinSekunnit");
 const ajastinAloita = document.querySelector("#ajastinaloita");
 const ajastinLopeta = document.querySelector("#ajastinlopeta");
 
@@ -15,16 +20,34 @@ function paivitaAjastin() {
 }
 
 ajastinAloita.addEventListener("click", () => {
-    const minuutit = Number(ajastinAika.value);
+    const minuutit = Number(ajastinMinuutit.value);
+    const sekunnit = Number(ajastinSekunnit.value);
 
-    if (!Number.isFinite(minuutit) || minuutit <= 0) {
-        ajastinNaytto.textContent = "Anna aika!";
+    if (
+        ajastinMinuutit.value === "" ||
+        ajastinSekunnit.value === "" ||
+        !Number.isInteger(minuutit) ||
+        !Number.isInteger(sekunnit) ||
+        minuutit < 0 ||
+        sekunnit < 0 ||
+        sekunnit > 59 ||
+        minuutit + sekunnit === 0
+    ) {
+        ajastinNaytto.textContent = "Tarkista aika!";
         return;
     }
 
     clearInterval(ajastinVali);
 
-    jaljellaSekunteja = Math.floor(minuutit * 60);
+    ilmoitusAani.pause();
+    ilmoitusAani.currentTime = 0;
+    ilmoitusAani.loop = false;
+
+    if (ajastinIlmoitus.open) {
+        ajastinIlmoitus.close();
+    }
+
+    jaljellaSekunteja = minuutit * 60 + sekunnit;
     paivitaAjastin();
 
     ajastinVali = setInterval(() => {
@@ -33,9 +56,16 @@ ajastinAloita.addEventListener("click", () => {
 
         if (jaljellaSekunteja <= 0) {
             clearInterval(ajastinVali);
-            ajastinNaytto.textContent = "Aika loppui!";
+            ajastinNaytto.textContent = "Valmis!";
 
-            alert("⏰ Ajastimen aika loppui!");
+            ajastinIlmoitus.showModal();
+
+            ilmoitusAani.loop = true;
+            ilmoitusAani.currentTime = 0;
+
+            ilmoitusAani.play().catch(virhe => {
+                console.error("Äänen toisto epäonnistui:", virhe);
+            });
         }
     }, 1000);
 });
@@ -43,5 +73,21 @@ ajastinAloita.addEventListener("click", () => {
 ajastinLopeta.addEventListener("click", () => {
     clearInterval(ajastinVali);
     jaljellaSekunteja = 0;
-    ajastinNaytto.textContent = "00:00";
+    paivitaAjastin();
+
+    ilmoitusAani.pause();
+    ilmoitusAani.currentTime = 0;
+    ilmoitusAani.loop = false;
+
+    if (ajastinIlmoitus.open) {
+        ajastinIlmoitus.close();
+    }
+});
+
+suljeAjastinIlmoitus.addEventListener("click", () => {
+    ajastinIlmoitus.close();
+
+    ilmoitusAani.pause();
+    ilmoitusAani.currentTime = 0;
+    ilmoitusAani.loop = false;
 });

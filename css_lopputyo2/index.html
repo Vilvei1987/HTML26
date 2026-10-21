@@ -11,10 +11,7 @@
 <body>
     <header>
         <h1>KotiHubi</h1>
-    </header>
-
-    <aside>
-        <section class="saa kortti" aria-labelledby="saaOtsikko">
+        <section class="saa" aria-labelledby="saaOtsikko">
             <h2 id="saaOtsikko"></h2>
             <div class="saa-sisalto">
                 <a
@@ -22,35 +19,47 @@
                     href="https://forecast7.com/en/60d2124d66/espoo/"
                     data-label_1="ESPOO"
                     data-label_2=""
-                    data-font="sans-serif"
+                    data-font="Tahoma"
                     data-mode="Current"
                     data-theme="pure"
                     data-basecolor="rgb(40, 47, 65)"
-                    data-textcolor="lightgray"
+                    data-textcolor="white"
                     data-highcolor="lightgray"
                     data-lowcolor="lightgray"
                     data-cloudcolor="#8f98a8"
-                    data-raincolor="#238b5a"
-                    data-snowcolor="#e6e9ef"
+                    data-raincolor="blue"
+                    data-snowcolor="white"
                     data-suncolor="yellow">
                     ESPOO SÄÄ
                 </a>
             </div>
         </section>
+        <a href="asetukset.html" aria-label="Asetukset">⚙️ Asetukset</a>
+    </header>
+
+    <aside>
         <section class="ajastin">
-            <h2>⏱️ Ajastin</h2>
+            <h2>⏰ Ajastin</h2>
             <p id="ajastinnaytto">00:00</p>
-            <input 
-                id="ajastinaika"
-                type="number"
-                name="ajastin"
-                placeholder="Minuutit"
-                min="1"
-                step="1"
-                required>
-            <button id="ajastinaloita">Aseta</button>
-            <button id="ajastinlopeta">Lopeta</button>
+            
+    <div class="ajastin-valinnat">
+    <div class="ajastin-kentta">
+        <label for="ajastinMinuutit">Minuutit</label>
+        <input id="ajastinMinuutit" type="number"
+               min="0" max="999" step="1" value="0">
+    </div>
+
+    <div class="ajastin-kentta">
+        <label for="ajastinSekunnit">Sekunnit</label>
+        <input id="ajastinSekunnit" type="number"
+               min="0" max="59" step="1" value="0">
+    </div>
+</div>
+
+<button id="ajastinaloita" type="button">Aloita</button>
+<button id="ajastinlopeta" type="button">Lopeta</button>
         </section>
+
     </aside>
 
     <main>
@@ -141,6 +150,12 @@
             <ul id="tehtavaLista"></ul>
         </section>
     </main>
+        <dialog id="ajastinIlmoitus">
+            <h1>⏰</h1>
+            <p>Ajastin valmis!</p>
+        <button id="suljeAjastinIlmoitus" type="button">Lopeta</button>
+        </dialog>
+
     <script src="js/appi.js"></script>
     <script src="js/ajastin.js"></script>
 </body>

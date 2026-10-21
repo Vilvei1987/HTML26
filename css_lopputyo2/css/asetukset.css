@@ -1,0 +1,58 @@
+:root {
+    --bg: rgb(40, 47, 65);
+    --text: white;
+    --surface: #1e2330;
+    --surface-hover: #354158;
+    --border: #2c3342;
+    --accent: #238b5a;
+    --text-muted: #8f98a8;
+    --event-color: #82c89e;
+
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    --small-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Perusrakenne */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 18rem minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 1.1rem;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+header {
+    grid-column: 1 / -1;
+    padding: 1rem 1.5rem;
+    text-align: start;
+}
+
+header h1 {
+    margin: 0;
+}
+
+aside {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+    margin: 0.75rem;
+}
+
+main {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    align-content: start;
+    gap: 0.5rem 0.5rem;
+    padding: 1rem;
+}
