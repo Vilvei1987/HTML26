@@ -215,7 +215,7 @@ dialog {
     border: 1px solid rgba(226, 219, 219);
     border-radius: 0.5rem;
     box-shadow: 0 4px 12px rgba(226, 219, 219, 0.2);
-    min-width: 60%;
+    min-width: 50%;
     max-width: 90%;
 }
 
@@ -263,9 +263,9 @@ dialog::backdrop {
 }
 
 #tapahtumaLomake textarea {
-    min-width: 0;
-    width: 35rem;
+    width: 80%;
     max-width: 80%;
+    min-width: 0;
     height: 2.5rem;
 }
 
@@ -509,15 +509,16 @@ textarea {
     border-radius: 0.5rem;
     background-color: var(--bg);
     color: var(--text-light);
+    box-shadow: var(--shadow);
     font: inherit;
     cursor: pointer;
-    transition: background-color 0.2s ease,
-                box-shadow 0.2s ease;
+    transition: transform 0.2s;
+    
 }
 
 .ajastin button:hover {
     background-color: var(--surface-hover);
-    box-shadow: var(--shadow);
+    
 }
 
 .ajastin button:focus-visible,
