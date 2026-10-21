@@ -54,7 +54,10 @@ function naytaTehtavat() {
             naytaTehtavat();
         });
 
-        rivi.append(valinta, teksti, poista);
+        const sisalto = document.createElement("span");
+        sisalto.className = "rivin-sisalto";
+        sisalto.append(valinta, teksti);
+        rivi.append(sisalto, poista);
         tehtavaLista.appendChild(rivi);
     });
 }
@@ -123,7 +126,10 @@ function naytaOstokset() {
             naytaOstokset();
         });
 
-        rivi.append(valinta, teksti, poista);
+        const sisalto = document.createElement("span");
+        sisalto.className = "rivin-sisalto";
+        sisalto.append(valinta, teksti);
+        rivi.append(sisalto, poista);
         ostosLista.appendChild(rivi);
     });
 }

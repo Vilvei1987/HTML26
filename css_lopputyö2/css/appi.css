@@ -259,6 +259,7 @@ dialog::backdrop {
 #tehtavaLomake textarea {
     min-width: 0;
     width: 15rem;
+    max-width: 80%;
     height: 2.5rem;
 }
 
@@ -429,4 +430,103 @@ textarea {
     position: absolute;
     top: -2px;
     left: 2px;
+}
+
+#ostosLista li, #tehtavaLista li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:0.5rem;
+    
+}
+
+#ostosLista li,
+#tehtavaLista li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+#ostosLista .rivin-sisalto,
+#tehtavaLista .rivin-sisalto {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+#ostosLista input[type="checkbox"],
+#tehtavaLista input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   AJASTIN
+========================= */
+
+.ajastin {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.ajastin h2 {
+    margin: 0;
+    text-align: center;
+}
+
+#ajastinnaytto {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+#ajastinaika {
+    width: 100%;
+    min-width: 0;
+}
+
+.ajastin button {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--accent);
+    color: var(--text-light);
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.ajastin button:hover {
+    box-shadow: var(--shadow);
+}
+
+.ajastin button:focus-visible,
+#ajastinaika:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ajastin button {
+        transition: none;
+    }
 }

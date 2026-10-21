@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="KotiHubi kokoaa perheen kalenterin, ostoslistan ja tehtävät yhteen paikkaan.">
     <meta name="author" content="Ville Veijonen">
-    <meta name="theme-color" content="#282f41">
     <title>KotiHubi</title>
     <link rel="stylesheet" href="css/appi.css">
-    <script src="js/appi.js" defer></script>
 </head>
 <body>
     <header>
@@ -38,6 +36,20 @@
                     ESPOO SÄÄ
                 </a>
             </div>
+        </section>
+        <section class="ajastin">
+            <h2>⏱️ Ajastin</h2>
+            <p id="ajastinnaytto">00:00</p>
+            <input 
+                id="ajastinaika"
+                type="number"
+                name="ajastin"
+                placeholder="Minuutit"
+                min="1"
+                step="1"
+                required>
+            <button id="ajastinaloita">Aseta</button>
+            <button id="ajastinlopeta">Lopeta</button>
         </section>
     </aside>
 
@@ -124,11 +136,12 @@
                 name="tehtava"
                 placeholder="Kirjoita tehtävä"
                 required></textarea>
-        <button type="submit">Lisää</button>
+                <button type="submit">Lisää</button>
             </form>
-
             <ul id="tehtavaLista"></ul>
         </section>
     </main>
+    <script src="js/appi.js"></script>
+    <script src="js/ajastin.js"></script>
 </body>
 </html>
