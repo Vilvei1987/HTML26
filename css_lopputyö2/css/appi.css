@@ -259,13 +259,13 @@ dialog::backdrop {
 #tehtavaLomake textarea {
     min-width: 0;
     width: 15rem;
-    max-width: 80%;
     height: 2.5rem;
 }
 
 #tapahtumaLomake textarea {
     min-width: 0;
     width: 35rem;
+    max-width: 80%;
     height: 2.5rem;
 }
 
