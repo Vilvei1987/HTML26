@@ -62,7 +62,7 @@ function naytaTehtavat() {
     });
 }
 
-tehtavaLomake.addEventListener("submit", (e) => {
+    tehtavaLomake.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const nimi = tehtavaKentta.value.trim();
@@ -193,7 +193,6 @@ function muotoilePaivamaara(paivamaara) {
             year: "numeric"
         });
 }
-
 
 /* Näyttää valitun päivän tapahtumat dialogissa */
 
