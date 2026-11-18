@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekisteröitymislomake - Perusversio</title>
+    <script src="rek_lomake.js" defer></script>
+</head>
+<body>
+
+    <main>
+        <form id="registrationForm" novalidate>
+            <fieldset>
+                <legend>Rekisteröidy</legend>
+
+                <p>
+                    <label for="username">Käyttäjänimi</label>
+                    <input type="text" id="username" name="username" required minlength="3" aria-invalid="false" aria-describedby="username-error">
+                    <small id="username-error" class="error-message">Käyttäjänimen tulee olla vähintään 3 merkkiä pitkä.</small>
+                </p>
+
+                <p>
+                    <label for="email">Sähköposti</label>
+                    <input type="email" id="email" name="email" required aria-invalid="false" aria-describedby="email-error">
+                    <small id="email-error" class="error-message">Anna kelvollinen sähköpostiosoite.</small>
+                </p>
+
+                <p>
+                    <label for="password">Salasana</label>
+                    <input type="password" id="password" name="password" required minlength="6" aria-invalid="false" aria-describedby="password-error">
+                    <small id="password-error" class="error-message">Salasanan tulee olla vähintään 6 merkkiä pitkä.</small>
+                </p>
+
+                <p>
+                    <label for="confirmPassword">Vahvista salasana</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required aria-invalid="false" aria-describedby="confirmPassword-error">
+                    <small id="confirmPassword-error" class="error-message">Salasanojen täytyy täsmätä.</small>
+                </p>
+
+                <p class="checkbox-field">
+                    <input type="checkbox" id="terms" name="terms" required aria-invalid="false" aria-describedby="terms-error">
+                    <label for="terms">Hyväksyn käyttöehdot</label>
+                    <small id="terms-error" class="error-message">Sinun täytyy hyväksyä ehdot.</small>
+                </p>
+
+                <button type="submit">Luo tili</button>
+            </fieldset>
+        </form>
+    </main> 
+</body>
+</html>

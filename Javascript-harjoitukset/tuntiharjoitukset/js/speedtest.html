@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettiyhteystesti</title>
+    <script type="module" src="speedtest.js"></script>
+    <link rel="stylesheet" href="speedtest.css">
+</head>
+<body>
+    <header>
+    <h1>Network Monitor</h1>
+    <p>Internetyhteyden nopeuden ja laadun mittaus</p>
+    </header>
+    <main>
+    <section>
+        <h2>Yhteystesti</h2>
+        <button id="aloitaTesti">Aloita mittaus</button>
+        <div class="tulokset">
+    <div class="tulos">
+        <h3>Latausnopeus</h3>
+        <p id="lataus">-- Mbps</p>
+    </div>
+
+    <div class="tulos">
+        <h3>Lähetysnopeus</h3>
+        <p id="lahetys">-- Mbps</p>
+    </div>
+
+    <div class="tulos">
+        <h3>Viive (Ping)</h3>
+        <p id="ping">-- ms</p>
+    </div>
+
+    <div class="tulos">
+        <h3>Värinä (Jitter)</h3>
+        <p id="jitter">-- ms</p>
+    </div>
+    </div>
+    <p id="tila">Valmis mittaukseen</p>
+    </section>
+</main>
+</body>
+</html>

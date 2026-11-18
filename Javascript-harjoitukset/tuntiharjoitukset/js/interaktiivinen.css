@@ -1,0 +1,20 @@
+body {
+    background-color: lightgray;
+    text-align: center;
+    
+}
+
+p {
+    color: green;
+}
+
+button {
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+#haku {
+    border-radius: 10px;
+    border: 2px solid black;
+}

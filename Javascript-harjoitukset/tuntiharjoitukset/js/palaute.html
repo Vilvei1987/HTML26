@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palautelomake</title>
+    <script src="palaute.js" defer></script>
+</head>
+<body>
+
+    <main>
+        <form id="feedbackForm" novalidate>
+            <fieldset>
+                <legend>Palautelomake</legend>
+
+                <p>
+                    <label for="topic">Aihe</label>
+                    <select id="topic" name="topic" required aria-invalid="false" aria-describedby="topic-error">
+                        <option value="">Valitse aihe</option>
+                        <option value="palaute">Yleinen palaute</option>
+                        <option value="kehitys">Kehitysidea</option>
+                        <option value="ongelma">Ongelma tai virhe</option>
+                    </select>
+                    <span id="topic-error">Valitse aihe.</span>
+                </p>
+
+                <p>
+                    <label for="message">Viesti</label>
+                    <textarea id="message" name="message" rows="4" required minlength="5" aria-invalid="false" aria-describedby="message-error"></textarea>
+                    <span id="message-error">Viestin tulee olla vähintään 5 merkkiä pitkä.</span>
+                </p>
+
+                <fieldset>
+                    <legend>Arvosana</legend>
+                    <p>
+                        <input type="radio" id="rating1" name="rating" value="1" required>
+                        <label for="rating1">1</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="rating2" name="rating" value="2">
+                        <label for="rating2">2</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="rating3" name="rating" value="3">
+                        <label for="rating3">3</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="rating4" name="rating" value="4">
+                        <label for="rating4">4</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="rating5" name="rating" value="5">
+                        <label for="rating5">5</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <input type="checkbox" id="contactPermission" name="contactPermission" value="kylla">
+                    <label for="contactPermission">Sallin yhteydenoton sähköpostitse</label>
+                </p>
+
+                <button type="submit">Lähetä palaute</button>
+            </fieldset>
+        </form>
+
+        <output id="summary"></output>
+    </main>
+
+</body>
+</html>

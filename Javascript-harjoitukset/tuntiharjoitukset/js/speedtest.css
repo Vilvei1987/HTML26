@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(25, 25, 74);
+    color: gray;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+button {
+    background-color: rgb(25, 25, 74);
+    color: gray;
+    border-radius: 15px;
+    border: 2px solid gray;
+}
