@@ -1,0 +1,98 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #aac8ef;
+    margin: 0;
+    padding: 30px;
+    color: #202d34;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #263b50;
+}
+
+#kayttajat {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.kortti {
+    background-color: white;
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kortti:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.kuva {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #e3eaf2;
+}
+
+.kortti h2 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+    color: #263b50;
+}
+
+.kortti p {
+    font-size: 15px;
+    color: #687786;
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+#tila {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #263b50;
+    margin: 25px 0;
+    min-height: 25px;
+    animation: lataus 1s ease-in-out infinite alternate;
+}
+
+@keyframes lataus {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Pienemmät näytöt */
+
+@media (max-width: 1000px) {
+    #kayttajat {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    #kayttajat {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding: 15px;
+    }
+}
